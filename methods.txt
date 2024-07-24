@@ -1,0 +1,548 @@
+			NO RETURN AND NO ARGUMENT 
+
+class Main :
+add
+div
+multi
+sub
+mod 
+
+main method :access
+
+
+
+public class Oops {
+    void add(){
+        int a=34, b=67;
+        int c= a+b;
+        System.out.println("add: " + c);
+    }
+    void div(){
+        int a=124, b=4;
+        int c= a/b;
+        System.out.println("div: " + c);
+    }
+    void multi(){
+        int a=13, b=14;
+        int c= a*b;
+        System.out.println("mul: " + c);
+    }
+    void sub(){
+        int a=46, b=13;
+        int c= a-b;
+        System.out.println("sub: " + c);
+    }
+    void mod(){
+        int a=56, b=6;
+        int c= a%b;
+        System.out.println("mod: " + c);
+    }
+
+    public static void main(String args[]){
+        Oops obj= new Oops();
+        obj.add();
+        obj.div();
+        obj.multi();
+        obj.sub();
+        obj.mod();
+    }
+}
+
+
+add: 101
+div: 31
+mul: 182
+sub: 33
+mod: 2
+
+------------------------------------------------------------------------
+
+class A
+add
+div
+multi
+sub
+mod 
+
+
+class Main :
+
+main method :A class k methods ko access
+
+
+
+class A{
+    void add(){
+        int a=12, b=56;
+        int c= a+b;
+        System.out.println("add: " + c);
+    }
+    void div(){
+        int a=89, b=4;
+        int c= a/b;
+        System.out.println("div: " + c);
+    }
+    void multi(){
+        int a=15, b=11;
+        int c= a*b;
+        System.out.println("mul: " + c);
+    }
+    void sub(){
+        int a=86, b=23;
+        int c= a-b;
+        System.out.println("sub: " + c);
+    }
+    void mod(){
+        int a=71, b=3;
+        int c= a%b;
+        System.out.println("mod: " + c);
+    }
+}
+
+public class Oops {
+    public static void main(String args[]){
+        A obj= new A();
+        obj.add();
+        obj.div();
+        obj.multi();
+        obj.sub();
+        obj.mod();
+    }
+}
+
+
+Output:
+add: 68
+div: 22
+mul: 165
+sub: 63
+mod: 2
+
+------------------------------------------------------------------------
+
+class A
+add
+
+class B
+div
+
+class C
+multi
+
+class D
+sub
+
+class E
+mod 
+
+
+class Main :
+
+main method :access all the methods
+
+
+
+class A{
+    void add(){
+        int a=14, b=48;
+        int c= a+b;
+        System.out.println("add: " + c);
+    }
+}
+
+class B{
+    void div(){
+        int a=17, b=3;
+        int c= a/b;
+        System.out.println("div: " + c);
+    }
+}
+class C{
+    void multi(){
+        int a=4, b=13;
+        int c= a*b;
+        System.out.println("mul: " + c);
+    }
+}
+class D{
+    void sub(){
+        int a=37, b=23;
+        int c= a-b;
+        System.out.println("sub: " + c);
+    }
+}
+class E{
+    void mod(){
+        int a=71, b=8;
+        int c= a%b;
+        System.out.println("mod: " + c);
+    }
+}
+
+public class Oops {
+    public static void main(String args[]){
+        A a= new A();
+        B b= new B();
+        C c= new C();
+        D d= new D();
+        E e= new E();
+        a.add();
+        b.div();
+        c.multi();
+        d.sub();
+        e.mod();
+    }
+}
+
+
+Output:
+add: 62
+div: 5
+mul: 52
+sub: 14
+mod: 7
+
+========================================================================
+
+			NO RETURN AND ARGUMENT 
+
+class Main :
+add
+div
+multi
+sub
+mod 
+
+main method :access
+
+
+public class Oops {
+    void add(int a, int b){
+        int c= a+b;
+        System.out.println("add: " + c);
+    }
+    void div(int a, int b){
+        int c= a/b;
+        System.out.println("div: " + c);
+    }
+    void multi(int a, int b){
+        int c= a*b;
+        System.out.println("mul: " + c);
+    }
+    void sub(int a, int b){
+        int c= a-b;
+        System.out.println("sub: " + c);
+    }
+    void mod(int a, int b){
+        int c= a%b;
+        System.out.println("mod: " + c);
+    }
+
+    public static void main(String args[]){
+        Oops obj= new Oops();
+        obj.add(12, 13);
+        obj.div(31,5);
+        obj.multi(3,7);
+        obj.sub(67,23);
+        obj.mod(45,2);
+    }
+}
+
+
+Output:
+add: 25
+div: 6
+mul: 21
+sub: 44
+mod: 1
+
+------------------------------------------------------------------------
+
+class A
+add
+div
+multi
+sub
+mod 
+
+
+class Main :
+
+main method :A class k methods ko access
+
+
+class A{
+    void add(int a, int b){
+        int c= a+b;
+        System.out.println("add: " + c);
+    }
+    void div(int a, int b){
+        int c= a/b;
+        System.out.println("div: " + c);
+    }
+    void multi(int a, int b){
+        int c= a*b;
+        System.out.println("mul: " + c);
+    }
+    void sub(int a, int b){
+        int c= a-b;
+        System.out.println("sub: " + c);
+    }
+    void mod(int a, int b){
+        int c= a%b;
+        System.out.println("mod: " + c);
+    }
+}
+
+public class Oops {
+    public static void main(String args[]){
+        A obj= new A();
+        obj.add(16, 27);
+        obj.div(42,11);
+        obj.multi(5,8);
+        obj.sub(46,39);
+        obj.mod(32,7);
+    }
+}
+
+
+Output:
+add: 43
+div: 3
+mul: 40
+sub: 7
+mod: 4
+
+------------------------------------------------------------------------
+
+class A
+add
+
+class B
+div
+
+class C
+multi
+
+class D
+sub
+
+class E
+mod 
+
+
+class Main :
+
+main method :access all the methods
+
+
+
+class A{
+    void add(int a, int b){
+        int c= a+b;
+        System.out.println("add: " + c);
+    }
+}
+
+class B{
+    void div(int a, int b){
+        int c= a/b;
+        System.out.println("div: " + c);
+    }
+}
+class C{
+    void multi(int a, int b){
+        int c= a*b;
+        System.out.println("mul: " + c);
+    }
+}
+class D{
+    void sub(int a, int b){
+        int c= a-b;
+        System.out.println("sub: " + c);
+    }
+}
+class E{
+    void mod(int a, int b){
+        int c= a%b;
+        System.out.println("mod: " + c);
+    }
+}
+
+public class Oops {
+    public static void main(String args[]){
+        A a= new A();
+        B b= new B();
+        C c= new C();
+        D d= new D();
+        E e= new E();
+        a.add(12,16);
+        b.div(53,8);
+        c.multi(2,7);
+        d.sub(39,23);
+        e.mod(43,6);
+    }
+}
+
+
+Output:
+add: 28
+div: 6
+mul: 14
+sub: 16
+mod: 1
+
+========================================================================
+
+			NO RETURN NO ARGUMENT
+
+class A
+object C
+add
+
+class B
+div
+object A
+
+class C
+multi
+
+class D
+sub
+object B
+
+class E
+object D
+mod 
+
+
+class Main :
+
+main method :access all the methods
+
+
+class A{
+    void add(){
+        C obC= new C();
+        obC.multi();
+        int a=14, b=48;
+        int c= a+b;
+        System.out.println("add: " + c);
+    }
+}
+
+class B{
+    void div(){
+        int a=17, b=3;
+        int c= a/b;
+        System.out.println("div: " + c);
+        A obA= new A();
+        obA.add();
+    }
+}
+class C{
+    void multi(){
+        int a=4, b=13;
+        int c= a*b;
+        System.out.println("mul: " + c);
+    }
+}
+class D{
+    void sub(){
+        int a=37, b=23;
+        int c= a-b;
+        System.out.println("sub: " + c);
+        B obB= new B();
+        obB.div();
+    }
+}
+
+
+Output:
+sub: 14
+div: 5
+mul: 52
+add: 62
+mod: 7
+
+========================================================================
+
+			NO RETURN AND ARGUMENT
+
+class A
+object C
+add
+
+class B
+object A
+div
+
+class C
+multi
+
+class D
+object B
+sub
+
+class E
+object D
+mod 
+
+class Main :
+
+main method :access all the methods
+
+
+class A{
+    void add(int a, int b){
+        C obC= new C();
+        obC.multi(5, 7);
+        int c= a+b;
+        System.out.println("add: " + c);
+    }
+}
+class B{
+    void div(int a, int b){
+        A obA= new A();
+        obA.add(15, 3);
+        int c= a/b;
+        System.out.println("div: " + c);
+    }
+}
+class C{
+    void multi(int a, int b){
+        int c= a*b;
+        System.out.println("mul: " + c);
+    }
+}
+class D{
+    void sub(int a, int b){
+        B obB= new B();
+        obB.div(27,3);
+        int c= a-b;
+        System.out.println("sub: " + c);
+    }
+}
+class E{
+    void mod(int a, int b){
+        D obD= new D();
+        obD.sub(32,17);
+        int c= a%b;
+        System.out.println("mod: " + c);
+    }
+}
+
+public class Oops {
+    public static void main(String args[]){
+        E obE= new E();
+        obE.mod(25,4);
+    }
+}
+
+
+Output:
+mul: 35
+add: 18
+div: 9
+sub: 15
+mod: 1
