@@ -1,0 +1,694 @@
+		RETURN AND NO ARGUMENT
+
+all primitive data type :used as a return type 
+String use 
+covariant return type 
+
+
+public class Main{
+    byte byteMethod(){
+        byte num= 12;
+        return num;
+    }
+    short shortMethod(){
+        short num= 1200;
+        return num;
+    }
+    Main intMethod(){
+        int num= 35000;
+
+        return this;
+    }
+    long longMethod(){
+        long num= 9876543210L;
+        return num;
+    }
+
+    float floatMethod(){
+        float num= 12.8f;
+        return num;
+    }
+    double doubleMethod(){
+        double num= 1200.50;
+        return num;
+    }
+    char charMethod(){
+        char c= 'A';
+        return c;
+    }
+    boolean booleanMethod(){
+        boolean b= true;
+        return b;
+    }
+    String stringMethod(){
+        String s= "Hello World";
+        return s;
+    }
+
+    Main coVariantMethod(){
+        System.out.println("A covariant method");
+        return this;
+    }
+    public static void main(String[] args){
+        Main obj= new Main();
+        System.out.println("byte: " + obj.byteMethod());
+        System.out.println("short: " + obj.shortMethod());
+        System.out.println("int: " + obj.intMethod());
+        System.out.println("long: " + obj.longMethod());
+        System.out.println("float: " + obj.floatMethod());
+        System.out.println("double: " + obj.doubleMethod());
+        System.out.println("char: " + obj.charMethod());
+        System.out.println("boolean: " + obj.booleanMethod());
+        System.out.println("String: " + obj.stringMethod());
+        obj.coVariantMethod();
+
+    }
+}
+
+
+Output:
+byte: 12
+short: 1200
+int: 35000
+long: 9876543210
+float: 12.8
+double: 1200.5
+char: A
+boolean: true
+String: Hello World
+A covariant method
+
+-----------------------------------------------------------------
+
+class Main :
+add
+div
+multi
+sub
+mod 
+
+main method :access
+
+
+public class Main{
+    int add(){
+        int a=34, b=67;
+        int c= a+b;
+        return c;
+    }
+    int div(){
+        int a=124, b=4;
+        int c= a/b;
+        return c;
+    }
+    int multi(){
+        int a=13, b=14;
+        int c= a*b;
+        return c;
+    }
+    int sub(){
+        int a=46, b=13;
+        int c= a-b;
+        return c;
+    }
+    int mod(){
+        int a=56, b=6;
+        int c= a%b;
+        return c;
+    }
+
+    public static void main(String[] args){
+        Main obj= new Main();
+        System.out.println("Add: "+ obj.add());
+        System.out.println("Div: "+ obj.div());
+        System.out.println("Multi: "+ obj.multi());
+        System.out.println("Sub: "+ obj.sub());
+        System.out.println("Mod: "+ obj.mod());
+    }
+}
+
+
+Output:
+Add: 101
+Div: 31
+Multi: 182
+Sub: 33
+Mod: 2
+
+-----------------------------------------------------------------
+
+class A
+add
+div
+multi
+sub
+mod 
+
+
+class Main :
+covariant return type 
+
+main method :A class k methods ko access
+
+
+class A{
+    int add(){
+        int a=34, b=67;
+        int c= a+b;
+        return c;
+    }
+    int div(){
+        int a=124, b=4;
+        int c= a/b;
+        return c;
+    }
+    int multi(){
+        int a=13, b=14;
+        int c= a*b;
+        return c;
+    }
+    int sub(){
+        int a=46, b=13;
+        int c= a-b;
+        return c;
+    }
+    int mod(){
+        int a=56, b=6;
+        int c= a%b;
+        return c;
+    }
+}
+public class Main{
+    Main methodCV(){
+        String s= "This is a covariant method in main class";
+        System.out.println(s);
+        return this;
+    }
+
+    public static void main(String[] args){
+
+        A objA= new A();
+        System.out.println("Add: "+objA.add());
+        System.out.println("Div: "+objA.div());
+        System.out.println("Multi: "+objA.multi());
+        System.out.println("Sub: "+objA.sub());
+        System.out.println("Mod: "+objA.mod());
+
+        Main obj= new Main();
+        obj.methodCV();
+
+    }
+}   
+
+
+Output:
+Add: 101
+Div: 31
+Multi: 182
+Sub: 33
+Mod: 2
+This is a covariant method in main class
+
+-----------------------------------------------------------------
+
+class A
+covariant return type 
+object C
+add
+
+class B
+covariant return type 
+div
+object A
+
+class C
+covariant return type 
+multi
+
+class D
+covariant return type 
+sub
+object B
+
+class E
+covariant return type 
+object D
+mod 
+
+
+class Main :
+covariant return type 
+
+main method :access all the methods
+
+
+
+class A{
+    A methodA(){
+        System.out.println("Method A");
+        return this;
+    }
+    int add(){
+        C obC= new C();
+        obC.methodC();
+        obC.multi();
+        int a=14, b=48;
+        int c= a+b;
+        System.out.println(c);
+        return 0;
+    }
+}
+
+class B{
+    B methodB(){
+        System.out.println("Method B");
+        return this;
+    }
+    int div(){
+        int a=17, b=3;
+        int c= a/b;
+        System.out.println(c);
+        A obA= new A();
+        obA.methodA();
+        obA.add();
+        return 0;
+    }
+}
+class C{
+    C methodC(){
+        System.out.println("Method C");
+        return this;
+    }
+    int multi(){
+        int a=4, b=13;
+        int c= a*b;
+        System.out.println(c);
+        return 0;
+    }
+}
+class D{
+    D methodD(){
+        System.out.println("Method D");
+        return this;
+    }
+    int sub(){
+        int a=37, b=23;
+        int c= a-b;
+        System.out.println(c);
+        B obB= new B();
+        obB.methodB();
+        obB.div();
+        return 0;
+    }
+}
+class E{
+    E methodE(){
+        System.out.println("Method E");
+        return this;
+    }
+    int mod(){
+        D obD= new D();
+        obD.methodD();
+        obD.sub();
+        int a=24, b=7;
+        int c= a%b;
+        System.out.println(c);
+        return 0;
+    }
+}
+public class Main{
+    Main methodCV(){
+        String s= "This is a covariant method in main class";
+        System.out.println(s);
+        return this;
+    }
+
+    public static void main(String[] args){
+
+        E objE= new E();
+        objE.methodE();
+        objE.mod();
+
+        Main obj= new Main();
+        obj.methodCV();
+
+    }
+}
+
+
+
+Output:
+Method E
+Method D
+14
+Method B
+5
+Method A
+Method C
+52
+62
+3
+This is a covariant method in main class
+
+=================================================================
+
+
+		RETURN AND ARGUMENT
+
+
+all primitive data type :used as a return type 
+
+String used 
+
+covariant return type 
+
+
+
+public class Main{
+    byte byteMethod(byte n){
+        byte num= n;
+        return num;
+    }
+    short shortMethod(short n){
+        short num=n;
+        return num;
+    }
+    int intMethod(int n){
+        int num= n;
+        return num;
+    }
+    long longMethod(long n){
+        long num= n;
+        return num;
+    }
+
+    float floatMethod(float n){
+        float num= n;
+        return num;
+    }
+    double doubleMethod(double n){
+        double num= n;
+        return num;
+    }
+    char charMethod(char ch){
+        char c= ch;
+        return c;
+    }
+    boolean booleanMethod(boolean value){
+        boolean b= value;
+        return b;
+    }
+    String stringMethod(String text){
+        String s= text;
+        return s;
+    }
+
+    Main coVariantMethod(int a){
+        System.out.println(a + " covariant method");
+        return this;
+    }
+    public static void main(String[] args){
+        Main obj= new Main();
+        System.out.println("byte: " + obj.byteMethod((byte)12));
+        System.out.println("short: " + obj.shortMethod((short)1340));
+        System.out.println("int: " + obj.intMethod(35000));
+        System.out.println("long: " + obj.longMethod(9876543210L));
+        System.out.println("float: " + obj.floatMethod(12.8f));
+        System.out.println("double: " + obj.doubleMethod(1200.50));
+        System.out.println("char: " + obj.charMethod('A'));
+        System.out.println("boolean: " + obj.booleanMethod(true));
+        System.out.println("String: " + obj.stringMethod("Hello World"));
+        obj.coVariantMethod(1);
+
+    }
+}
+
+
+Output:
+byte: 12
+short: 1340
+int: 35000
+long: 9876543210
+float: 12.8
+double: 1200.5
+char: A
+boolean: true
+String: Hello World
+1 covariant method
+
+
+
+-----------------------------------------------------------------
+
+class Main :
+add
+div
+multi
+sub
+mod 
+
+main method :access
+
+
+public class Main{
+    int add(int a, int b){
+        int c= a+b;
+        return c;
+    }
+    int div(int a, int b){
+        int c= a/b;
+        return c;
+    }
+    int multi(int a, int b){
+        int c= a*b;
+        return c;
+    }
+    int sub(int a, int b){
+        int c= a-b;
+        return c;
+    }
+    int mod(int a, int b){
+        int c= a%b;
+        return c;
+    }
+
+    public static void main(String[] args){
+        Main obj= new Main();
+        System.out.println("Add: "+ obj.add(34,69));
+        System.out.println("Div: "+ obj.div(124,4));
+        System.out.println("Multi: "+ obj.multi(13,5));
+        System.out.println("Sub: "+ obj.sub(46,13));
+        System.out.println("Mod: "+ obj.mod(56,6));
+    }
+}
+
+
+Output:
+Add: 103
+Div: 31
+Multi: 65
+Sub: 33
+Mod: 2
+
+-----------------------------------------------------------------
+
+class A
+add
+div
+multi
+sub
+mod 
+
+
+class Main :
+covariant return type 
+
+main method :A class k methods ko access
+
+
+class A{
+    int add(int a, int b){
+        int c= a+b;
+        return c;
+    }
+    int div(int a, int b){
+        int c= a/b;
+        return c;
+    }
+    int multi(int a, int b){
+        int c= a*b;
+        return c;
+    }
+    int sub(int a, int b){
+        int c= a-b;
+        return c;
+    }
+    int mod(int a, int b){
+        int c= a%b;
+        return c;
+    }
+}
+public class Main{
+    Main coMethod(int n){
+        System.out.println(n + " co variant method");
+        return this;
+    }
+
+    public static void main(String[] args){
+        A obj= new A();
+        System.out.println("Add: "+ obj.add(34,69));
+        System.out.println("Div: "+ obj.div(124,4));
+        System.out.println("Multi: "+ obj.multi(13,5));
+        System.out.println("Sub: "+ obj.sub(46,13));
+        System.out.println("Mod: "+ obj.mod(56,6));
+
+        Main ob= new Main();
+        ob.coMethod(1);
+    }
+}
+
+
+Output:
+Add: 103
+Div: 31
+Multi: 65
+Sub: 33
+Mod: 2
+1 co variant method
+
+-------------------------------------------------------
+
+class A
+covariant return type 
+object C
+add
+
+class B
+covariant return type 
+div
+object A
+
+class C
+covariant return type 
+multi
+
+class D
+covariant return type 
+sub
+object B
+
+class E
+covariant return type 
+object D
+mod 
+
+
+class Main :
+covariant return type 
+
+main method :access all the methods
+
+
+
+class A{
+    A methodA(int n){
+        System.out.println("Method "+ n);
+        return this;
+    }
+    int add(int a, int b){
+        C obC= new C();
+        obC.methodC(3);
+        obC.multi(3,9);
+        int c= a+b;
+        System.out.println(c);
+        return 0;
+    }
+}
+
+class B{
+    B methodB(int n){
+        System.out.println("Method "+ n);
+        return this;
+    }
+    int div(int a, int b){
+        int c= a/b;
+        System.out.println(c);
+        A obA= new A();
+        obA.methodA(1);
+        obA.add(4,5);
+        return 0;
+    }
+}
+class C{
+    C methodC(int n){
+        System.out.println("Method "+ n);
+        return this;
+    }
+    int multi(int a, int b){
+        int c= a*b;
+        System.out.println(c);
+        return 0;
+    }
+}
+class D{
+    D methodD(int n){
+        System.out.println("Method "+ n);
+        return this;
+    }
+    int sub(int a, int b){
+        int c= a-b;
+        System.out.println(c);
+        B obB= new B();
+        obB.methodB(2);
+        obB.div(34,8);
+        return 0;
+    }
+}
+class E{
+    E methodE(int n){
+        System.out.println("Method "+ n);
+        return this;
+    }
+    int mod(int a, int b){
+        D obD= new D();
+        obD.methodD(4);
+        obD.sub(45,32);
+        int c= a%b;
+        System.out.println(c);
+        return 0;
+    }
+}
+public class Main{
+    Main methodCV(int n){
+        String s= "This is " + n + "th covariant method in main class";
+        System.out.println(s);
+        return this;
+    }
+
+    public static void main(String[] args){
+
+        E objE= new E();
+        objE.methodE(5);
+        objE.mod(13,2);
+
+        Main obj= new Main();
+        obj.methodCV(6);
+
+    }
+}
+
+
+Output:
+Method 5
+Method 4
+13
+Method 2
+4
+Method 1
+Method 3
+27
+9
+1
+This is 6th covariant method in main class
+
+-----------------------------------------------------------------
