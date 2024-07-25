@@ -1,0 +1,387 @@
+1)two number addition getter setter 
+two number multiplication getter setter 
+two number division getter setter 
+two number modular getter setter 
+two number substraction getter setter 
+
+
+import java.util.Scanner;
+public class Main{
+    int a, b;
+    void setNumbers(int a, int b){
+        this.a=a;
+        this.b=b;
+    }
+    int getAdd(){
+        return a+b;
+    }
+    int getMul(){
+        return a*b;
+    }
+    int getDiv(){
+        return a/b;
+    }
+    int getMod(){
+        return a%b;
+    }
+    int getSub(){
+        return a-b;
+    }
+    public static void main(String[] args){
+        Scanner sc= new Scanner(System.in);
+        Main obj= new Main();
+        System.out.print("Enter 2 numbers: ");
+        int a= sc.nextInt();
+        int b= sc.nextInt();
+        obj.setNumbers(a,b);
+        System.out.println("Add: " + obj.getAdd());
+        System.out.println("Mul: " + obj.getMul());
+        System.out.println("Div: " + obj.getDiv());
+        System.out.println("Mod: " + obj.getMod());
+        System.out.println("Sub: " + obj.getSub());
+    }
+}
+
+
+Output:
+Enter 2 numbers: 12 7
+Add: 19
+Mul: 84
+Div: 1
+Mod: 5
+Sub: 5
+
+------------------------------------------------------------------------
+
+class A
+constructor :two number addition
+
+class B
+constructor :two number multiplication
+
+class C
+constructor :two number division
+
+class D
+constructor :two number modular
+
+class Main 
+constructor :two number substraction 
+
+main method access 
+
+
+import java.util.Scanner;
+class A{
+    A(){
+        Scanner sc= new Scanner(System.in);
+        System.out.print("Enter a: ");
+        int a= sc.nextInt();
+        System.out.print("Enter b: ");
+        int b= sc.nextInt();
+        int c= a+b;
+        System.out.println("Add= " + c);
+    }
+}
+class B{
+    B(){
+        Scanner sc= new Scanner(System.in);
+        System.out.print("Enter a: ");
+        int a= sc.nextInt();
+        System.out.print("Enter b: ");
+        int b= sc.nextInt();
+        int c= a*b;
+        System.out.println("Mul= " + c);
+    }
+}
+class C{
+    C(){
+        Scanner sc= new Scanner(System.in);
+        System.out.print("Enter a: ");
+        int a= sc.nextInt();
+        System.out.print("Enter b: ");
+        int b= sc.nextInt();
+        int c= a/b;
+        System.out.println("Div= " + c);
+    }
+}
+class D{
+    D(){
+        Scanner sc= new Scanner(System.in);
+        System.out.print("Enter a: ");
+        int a= sc.nextInt();
+        System.out.print("Enter b: ");
+        int b= sc.nextInt();
+        int c= a%b;
+        System.out.println("mod= " + c);
+    }
+}
+public class Main{
+    Main(){
+        Scanner sc= new Scanner(System.in);
+        System.out.print("Enter a: ");
+        int a= sc.nextInt();
+        System.out.print("Enter b: ");
+        int b= sc.nextInt();
+        int c= a-b;
+        System.out.println("sub= " + c);
+    }
+    public static void main(String[] args){
+        new A();
+        new B();
+        new C();
+        new D();
+        new Main();
+
+    }
+}
+
+
+Output:
+Enter a: 4
+Enter b: 5
+Add= 9
+Enter a: 2
+Enter b: 6
+Mul= 12
+Enter a: 8
+Enter b: 2
+Div= 4
+Enter a: 9
+Enter b: 5
+mod= 4
+Enter a: 8
+Enter b: 6
+sub= 2
+
+------------------------------------------------------------------------
+
+class A
+constructor :two number addition
+method :no return and no argument 
+
+class B
+constructor :two number multiplication
+method :no return and  argument 
+
+class C
+constructor :two number division
+method : return and no argument 
+
+class D
+constructor :two number modular
+method : return and  argument 
+
+class Main 
+constructor :two number substraction 
+method :covariant return type 
+
+main method access 
+
+
+import java.util.Scanner;
+class A{
+    A(){
+        Scanner sc= new Scanner(System.in);
+        System.out.print("Enter a: ");
+        int a= sc.nextInt();
+        System.out.print("Enter b: ");
+        int b= sc.nextInt();
+        int c= a+b;
+        System.out.println("Add= " + c);
+    }
+    void greet(){
+        System.out.println("Hello A");
+    }
+}
+class B{
+    B(){
+        Scanner sc= new Scanner(System.in);
+        System.out.print("Enter a: ");
+        int a= sc.nextInt();
+        System.out.print("Enter b: ");
+        int b= sc.nextInt();
+        int c= a*b;
+        System.out.println("Mul= " + c);
+    }
+    void display(int n){
+        System.out.println("This is class " + n);
+    }
+}
+class C{
+    C(){
+        Scanner sc= new Scanner(System.in);
+        System.out.print("Enter a: ");
+        int a= sc.nextInt();
+        System.out.print("Enter b: ");
+        int b= sc.nextInt();
+        int c= a/b;
+        System.out.println("Div= " + c);
+    }
+    int show(){
+        int n= 12;
+        return n;
+    }
+}
+class D{
+    D(){
+        Scanner sc= new Scanner(System.in);
+        System.out.print("Enter a: ");
+        int a= sc.nextInt();
+        System.out.print("Enter b: ");
+        int b= sc.nextInt();
+        int c= a%b;
+        System.out.println("mod= " + c);
+    }
+    int add(int a, int b){
+        return a+b;
+    }
+}
+public class Main{
+    Main(){
+        Scanner sc= new Scanner(System.in);
+        System.out.print("Enter a: ");
+        int a= sc.nextInt();
+        System.out.print("Enter b: ");
+        int b= sc.nextInt();
+        int c= a-b;
+        System.out.println("sub= " + c);
+    }
+    Main coVariant(){
+        System.out.println("This is co-variant type");
+        return this;
+    }
+    public static void main(String[] args){
+        A a= new A();
+        a.greet();
+        B b= new B();
+        b.display(2);
+        C c= new C();
+        System.out.println(c.show());
+        D d= new D();
+        System.out.println(d.add(2,4));
+        Main m= new Main();
+        m.coVariant();
+    }
+}
+
+
+Output:
+Enter a: 4
+Enter b: 5
+Add= 9
+Hello A
+Enter a: 2
+Enter b: 7
+Mul= 14
+This is class 2
+Enter a: 9
+Enter b: 3
+Div= 3
+12
+Enter a: 15
+Enter b: 4
+mod= 3
+6
+Enter a: 12
+Enter b: 8
+sub= 4
+This is co-variant type
+
+------------------------------------------------------------------------
+
+make memory in copy : 
+
+import java.util.*;
+
+public class Main {
+    Main() {
+        System.out.println("Hello wolrd");
+    }
+
+    void show() {
+        System.out.println("show method");
+    }
+
+    public static void main(String[] args) {
+        new Main();
+        Main p = new Main();
+        p.show();
+        p.show();
+        p.show();
+        Main k = new Main();
+        k.show();
+        new Main();
+    }
+}
+
+
+------------------------------------------------------------------------
+
+through instance variable :
+
+class A
+constructor :two number addition
+
+class B
+constructor :two number multiplication
+
+class C
+constructor :two number division
+
+class D
+constructor :two number modular
+
+class Main 
+constructor :two number substraction 
+
+main method access 
+
+
+class A{
+    int a=4, b=7;
+    A(){
+        System.out.println("Add= " + (a+b));
+    }
+}
+class B{
+    int a=7, b=3;
+    B(){
+        System.out.println("Mul= " + (a*b));
+    }
+}
+class C{
+    int a= 13, b=4;
+    C(){
+        System.out.println("Div= " + (a/b));
+    }
+}
+class D{
+    int a= 8, b=6;
+    D(){
+        System.out.println("mod= " + (a%b));
+    }
+}
+public class Main{
+    int a=14, b=9;
+    Main(){
+        System.out.println("sub= " + (a-b));
+    }
+    public static void main(String[] args){
+        A a= new A();
+        B b= new B();
+        C c= new C();
+        D d= new D();
+        Main m= new Main();
+    }
+}
+
+
+Output:
+Add= 11
+Mul= 21
+Div= 3
+mod= 2
+sub= 5
+
+------------------------------------------------------------------------
