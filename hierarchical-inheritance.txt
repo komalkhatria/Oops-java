@@ -1,0 +1,591 @@
+hierarchical inheritance :
+--------------------------------------------------
+class A
+	method1 :
+
+class B
+	method2 :
+
+class C
+	method3 :
+
+
+class D
+	method4 :
+
+make only D class 
+
+class Main 
+main method :
+
+
+class A{
+    void method1(){
+        System.out.println("Method 1");
+    }
+}
+class B extends A{
+    void method2(){
+        System.out.println("Method 2");
+    }
+
+}
+class C extends A{
+    void method3(){
+        System.out.println("Method 3");
+    }
+}
+class D extends A{
+    void method4(){
+        System.out.println("Method 4");
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        B obB= new B();
+        obB.method1();
+        obB.method2();
+        C obC= new C();
+        obC.method1();
+        obC.method3();
+        D obD= new D();
+        obD.method1();
+        obD.method4();
+    }
+}
+
+
+Output:
+Method 1
+Method 2
+Method 1
+Method 3
+Method 1
+Method 4
+
+--------------------------------------------------
+
+getter setter method 
+
+class A
+	method1 :
+
+class B
+	method2 :
+
+class C
+	method3 :
+
+
+class D
+	method4 :
+
+
+class Main 
+main method :
+
+
+
+class A{
+    int a;
+    void setA(int a){
+        this.a= a;
+    }
+    int getA(){
+        return a;
+    }
+}
+class B extends A{
+    int b;
+    void setB(int b){
+        this.b= b;
+    }
+    int getB(){
+        return b;
+    }
+}
+class C extends A{
+    int c;
+    void setC(int c){
+        this.c= c;
+    }
+    int getC(){
+        return c;
+    }
+}
+class D extends A{
+    int d;
+    void setD(int d){
+        this.d= d;
+    }
+    int getD(){
+        return d;
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        B objB= new B();
+        objB.setA(1);
+        objB.setB(5);
+        C objC= new C();
+        objC.setA(2);
+        objC.setC(6);
+        D objD= new D();
+        objD.setA(3);
+        objD.setD(7);
+        System.out.println("A through B: " + objB.getA());
+        System.out.println("B through B: " + objB.getB());
+        System.out.println("A through C: " + objC.getA());
+        System.out.println("C through C: " + objC.getC());
+        System.out.println("A through D: " + objD.getA());
+        System.out.println("D through D: " + objD.getD());
+
+    }
+}
+
+
+Output:
+A through B: 1
+B through B: 5
+A through C: 2
+C through C: 6
+A through D: 3
+D through D: 7
+
+--------------------------------------------------
+
+instance variable  :constant 
+class A
+	method1 :
+
+class B
+	method2 :
+
+class C
+	method3 :
+
+
+class D
+	method4 :
+
+
+class Main 
+main method :
+
+
+
+class A{
+    int a=1;
+    void printA(){
+        System.out.println(a);
+    }
+}
+class B extends A{
+    int b=2;
+    void printB(){
+        System.out.println(b);
+    }
+}
+class C extends A{
+    int c=3;
+    void printC(){
+        System.out.println(c);
+    }
+}
+class D extends A{
+    void printD(){
+        System.out.println(a);
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        B objB= new B();
+        objB.printA();
+        objB.printB();
+        C objC= new C();
+        objC.printA();
+        objC.printC();
+        D objD= new D();
+        objD.printA();
+        objD.printD();
+
+    }
+}
+
+
+Output:
+1
+2
+1
+3
+1
+1
+--------------------------------------------------
+
+instance variable  :different name variable  
+class A
+	method1 :
+
+class B
+	method2 :
+
+class C
+	method3 :
+
+
+class D
+	method4 :
+
+
+class Main 
+main method :
+
+
+class A{
+    int a;
+    void printA(int p){
+        a=p;
+        System.out.println(a);
+    }
+}
+class B extends A{
+    int b;
+    void printB(int q){
+        b=q;
+        System.out.println(b);
+    }
+}
+class C extends A{
+    int c;
+    void printC(int r){
+        c=r;
+        System.out.println(c);
+    }
+}
+class D extends A{
+    int d;
+    void printD(int s){
+        d=s;
+        System.out.println(s);
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        B objB= new B();
+        objB.printA(1);
+        objB.printB(2);
+        C objC= new C();
+        objC.printA(13);
+        objC.printC(3);
+        D objD= new D();
+        objD.printA(12);
+        objD.printD(500);
+
+    }
+}
+
+
+Output:
+1
+2
+13
+3
+12
+500
+--------------------------------------------------
+
+instance variable  :same variable name  
+class A
+	method1 :
+
+class B
+	method2 :
+
+class C
+	method3 :
+
+
+class D
+	method4 :
+
+
+class Main 
+main method :
+
+
+class A{
+    int a;
+    void printA(int a){
+        this.a= a;
+        System.out.println(a);
+    }
+}
+class B extends A{
+    int b;
+    void printB(int b){
+        this.b= b;
+        System.out.println(b);
+    }
+}
+class C extends A{
+    int c;
+    void printC(int c){
+        this.c= c;
+        System.out.println(c);
+    }
+}
+class D extends A{
+    int d;
+    void printD(int d){
+        this.d= d;
+        System.out.println(d);
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        B objB= new B();
+        objB.printA(1);
+        objB.printB(2);
+        C objC= new C();
+        objC.printA(13);
+        objC.printC(3);
+        D objD= new D();
+        objD.printA(12);
+        objD.printD(500);
+
+    }
+}
+
+
+Output:
+10
+20
+100
+30
+1000
+40
+
+------------------------------------------------------------------------
+
+class A
+default constructor 
+
+class B
+default constructor 
+
+class C
+default constructor 
+
+
+class D
+default constructor 
+
+
+class Main 
+default constructor 
+
+main method :access 
+
+
+class A{
+    A(){
+        System.out.println("A constructor");
+    }
+}
+class B extends A{
+    B(){
+        System.out.println("B constructor");
+    }
+}
+class C extends A{
+    C(){
+        System.out.println("C constructor");
+    }
+}
+class D extends A{
+    D(){
+        System.out.println("D constructor");
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        new B();
+        new C();
+        new D();
+
+    }
+}
+
+
+Output:
+A constructor
+B constructor
+A constructor
+C constructor
+A constructor
+D constructor
+
+------------------------------------------------------------------------
+
+class Information
+instance variable : 
+cname
+
+three college name : ru, rtu , uot 
+	ru : caddress
+	cnumber
+	crating 
+	ccourses 	
+		bca 
+		bcom
+		bba 
+		mcom 
+			fees :semesmter wise all courses fees always be different 
+
+class Student ex College 
+		bca 
+		 sname
+                 saddress
+                 scontact 
+                 ssemester 
+
+		bcom
+		 sname
+                 saddress
+                 scontact 
+                 ssemester 
+
+
+		bba 
+		 sname
+                 saddress
+                 scontact 
+                 ssemester 
+
+
+		mcom 
+		 sname
+                 saddress
+                 scontact 
+                 ssemester 
+
+class Main 
+main method
+
+
+
+import java.util.Scanner;
+class College{
+    String cName, cAddress, cCourses, cFees;
+    long cNumber;
+    float cRating;
+    Scanner sc= new Scanner(System.in);
+    void college(){
+        System.out.print("Enter college name (ru/ rtu/ uot): ");
+        cName= sc.next();
+        if (cName.equals("ru")){
+            cAddress= "JLN Marg, RU Campus, Talvandi, Jaipur";
+            cNumber= 9800870066L;
+            cRating= 4.2f;
+        }
+        else if(cName.equals("rtu")){
+            cAddress= "RTU, Akelgarh, Kota";
+            cNumber= 9900870022L;
+            cRating= 4.6f;
+        }
+        else if(cName.equals("uot")){
+            cAddress= "Fatehpuria Main Road, Post Kumhariawas, Vatika Road";
+            cNumber= 98760005400L;
+            cRating= 3.8f;
+        }
+        else{
+            System.out.println("Irrelevant college name");
+        }
+        System.out.println("Name: " + cName);
+        System.out.println("Address: " + cAddress);
+        System.out.println("Number: " + cNumber);
+        System.out.println("Rating: " + cRating);
+        System.out.print("Courses: bca\n         bcom\n         bba\n         mcom\nChoose one: ");
+        cCourses= sc.next();
+        if(cCourses.equals("bca")){
+            cFees= "30,000/semester";
+        }
+        else if(cCourses.equals("bcom")){
+            cFees= "15,000/semester";
+        }
+        else if(cCourses.equals("bba")){
+            cFees= "25,000/semester";
+        }
+        else if(cCourses.equals("mcom")){
+            cFees= "22,000/semester";
+        }
+        else{
+            System.out.println("Irrelevant course");
+        }
+        System.out.println("Fees: " + cFees);
+    }
+}
+
+class Student extends College{
+    String sname, saddress;
+    long scontact;
+    int sem;
+        void student(){
+            System.out.println();
+            System.out.println("Enter student details: ");
+
+            System.out.print("Name: ");
+            sc.nextLine();
+            sname= sc.nextLine();
+            System.out.print("Address: ");
+            saddress= sc.nextLine();
+            System.out.print("Contact: ");
+            scontact= sc.nextLong();
+            System.out.print("Semester: ");
+            sem= sc.nextInt();
+            System.out.println();
+            System.out.println("Student details: ");
+            System.out.println("Course: " + cCourses);
+            System.out.println("Name: " + sname);
+            System.out.println("Address: " + saddress);
+            System.out.println("Contact: " + scontact);
+            System.out.println("Semester: " + sem);
+        }
+}
+public class Main{
+    public static void main(String args[]){
+        Student obj= new Student();
+        obj.college();
+        obj.student();
+    }
+}
+
+
+
+Output:
+Enter college name (ru/ rtu/ uot): rtu
+Name: rtu
+Address: RTU, Akelgarh, Kota
+Number: 9900870022
+Rating: 4.6
+Courses: bca
+         bcom
+         bba
+         mcom
+Choose one: bca
+Fees: 30,000/semester
+
+Enter student details: 
+Name: Payal
+Address: Jaipur, Rajasthan
+Contact: 9876543210
+Semester: 5
+
+Student details: 
+Course: bca
+Name: Payal
+Address: Jaipur, Rajasthan
+Contact: 9876543210
+Semester: 5
+ 
+--------------------------------------------------
