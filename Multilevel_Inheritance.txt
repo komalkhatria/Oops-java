@@ -1,0 +1,1230 @@
+class A
+	instance variable :public 
+	method :value pass 
+
+class B ex A 
+	instance variable :public 
+	method :value pass :A class instance variable + B class instance variable 
+
+class Main :
+main() :child k through 
+
+
+class A{
+    public int a;
+    void set(int a){
+        this.a= a;
+    }
+}
+class B extends A{
+    public int b;
+    void show(int b){
+        this.b= b;
+        System.out.println("A: " + a + ", B: " + b);
+    }
+}
+public class Main{
+    public static void main(String args[]){
+       B obj= new B();
+       obj.set(4);
+       obj.show(5);
+
+    }
+}
+
+Output:
+A: 4, B: 5
+
+-------------------------------------------------------------
+class A
+	instance variable :private 
+	method :value pass 
+
+class B ex A 
+	instance variable :public 
+	method :value pass 
+
+class Main :
+main() :child k through 
+
+error 
+problem solution code 
+
+class A{
+    private int a;
+    void set(int a){
+        this.a= a;
+    }
+}
+class B extends A{
+    public int b;
+    void show(int b){
+        this.b= b;
+        System.out.println(a + " " + b);
+    }
+}
+public class Main{
+    public static void main(String args[]){
+       B obj= new B();
+       obj.set(4);
+       obj.show(5);
+
+    }
+}
+
+Output:
+java: a has private access in A
+
+
+SOLUTION CODE:
+class A{
+    public int a;
+    void set(int a){
+        this.a= a;
+    }
+}
+class B extends A{
+    public int b;
+    void show(int b){
+        this.b= b;
+        System.out.println(a + " " + b);
+    }
+}
+public class Main{
+    public static void main(String args[]){
+       B obj= new B();
+       obj.set(4);
+       obj.show(5);
+
+    }
+}
+
+Output:
+4 5
+
+-------------------------------------------------------------
+
+class A
+	instance variable :public 
+	method :value pass 
+
+class B ex A 
+	instance variable :private 
+	method :value pass 
+
+class Main :
+main() :child k through 
+
+error 
+problem solution code 
+
+
+class A{
+    public int a;
+    void set(int a){
+        this.a= a;
+    }
+}
+class B extends A{
+    private int b;
+    void show(int b){
+        this.b= b;
+        System.out.println(a + " " + b);
+    }
+}
+public class Main{
+    public static void main(String args[]){
+       B obj= new B();
+       obj.set(4);
+       obj.show(5);
+
+    }
+}
+
+Output:
+4 5
+
+-------------------------------------------------------------
+
+class A
+	instance variable :private 
+	method :value pass 
+
+class B ex A 
+	instance variable :private 
+	method :value pass 
+
+class Main :
+main() :child k through 
+
+error 
+problem solution code 
+
+
+class A{
+    private int a;
+    void set(int a){
+        this.a= a;
+    }
+}
+class B extends A{
+    private int b;
+    void show(int b){
+        this.b= b;
+        System.out.println(a + " " + b);
+    }
+}
+public class Main{
+    public static void main(String args[]){
+       B obj= new B();
+       obj.set(4);
+       obj.show(5);
+
+    }
+}
+
+Output:
+java: a has private access in A
+
+
+SOLUTION CODE:
+class A{
+    public int a;
+    void set(int a){
+        this.a= a;
+    }
+}
+class B extends A{
+    private int b;
+    void show(int b){
+        this.b= b;
+        System.out.println(a + " " + b);
+    }
+}
+public class Main{
+    public static void main(String args[]){
+       B obj= new B();
+       obj.set(4);
+       obj.show(5);
+
+    }
+}
+
+Output:
+4 5
+
+-------------------------------------------------------------
+
+class A
+	instance variable :protected 
+	method :value pass 
+
+class B ex A 
+	instance variable :public 
+	method :value pass 
+
+class Main :
+main() :child k through 
+
+error 
+problem solution code 
+
+
+class A{
+    protected int a;
+    void set(int a){
+        this.a= a;
+    }
+}
+class B extends A{
+    public int b;
+    void show(int b){
+        this.b= b;
+        System.out.println(a + " " + b);
+    }
+}
+public class Main{
+    public static void main(String args[]){
+       B obj= new B();
+       obj.set(7);
+       obj.show(3);
+
+    }
+}
+
+Output:
+7 3
+
+-------------------------------------------------------------
+
+class A
+	instance variable :protected 
+	method :value pass 
+
+class B ex A 
+	instance variable :protected 
+	method :value pass 
+
+class Main :
+main() :child k through 
+
+error 
+problem solution code 
+
+
+class A{
+    protected int a;
+    void set(int a){
+        this.a= a;
+    }
+}
+class B extends A{
+    protected int b;
+    void show(int b){
+        this.b= b;
+        System.out.println(a + " " + b);
+    }
+}
+public class Main{
+    public static void main(String args[]){
+       B obj= new B();
+       obj.set(7);
+       obj.show(3);
+    }
+}
+
+Output:
+7 3
+
+-------------------------------------------------------------
+
+class A
+	instance variable :public 
+	method :value pass 
+
+class B ex A 
+	instance variable :protected 
+	method :value pass 
+
+class Main :
+main() :child k through 
+
+error 
+problem solution code 
+
+
+class A{
+    public int a;
+    void set(int a){
+        this.a= a;
+    }
+}
+class B extends A{
+    protected int b;
+    void show(int b){
+        this.b= b;
+        System.out.println(a + " " + b);
+    }
+}
+public class Main{
+    public static void main(String args[]){
+       B obj= new B();
+       obj.set(7);
+       obj.show(3);
+    }
+}
+
+Output:
+7 3
+
+-------------------------------------------------------------
+
+multilevel inheritance :
+
+class A
+normal line print 
+
+class B
+normal line print 
+
+class C
+normal line print 
+
+class Main 
+	main() :child k through all parent ki property access krni hey 
+
+
+class A{
+    void showA(){
+        System.out.println("Class A");
+    }
+}
+class B extends A{
+    void showB(){
+        System.out.println("Class B");
+    }
+}
+class C extends B{
+    void showC(){
+        System.out.println("Class C");
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        C obj= new C();
+        obj.showA();
+        obj.showB();
+        obj.showC();
+    }
+}
+
+
+Output:
+Class A
+Class B
+Class C
+
+-------------------------------------------------------------
+
+multilevel inheritance :
+
+class A
+add() 
+
+class B
+sub()
+
+class C
+div
+
+class D 
+multi 
+
+class Main 
+mod 
+	main() :Main k through all parent ki property access krni hey 
+
+
+
+class A{
+    void add(int a, int b){
+        System.out.println("Add: " + (a+b));
+    }
+}
+class B extends A{
+    void sub(int a, int b){
+        System.out.println("Sub: " + (a-b));
+    }
+}
+class C extends B{
+    void div(int a, int b){
+        System.out.println("Div: " + (a/b));
+    }
+}
+class D extends C{
+    void multi(int a, int b){
+        System.out.println("Multi: " + (a*b));
+    }
+}
+public class Main extends D{
+    void mod(int a, int b){
+        System.out.println("Mod: " + (a%b));
+    }
+    public static void main(String args[]){
+        Main obj= new Main();
+        obj.add(3,7);
+        obj.sub(13,9);
+        obj.div(25,4);
+        obj.multi(7,3);
+        obj.mod(7,3);
+    }
+}
+
+
+Output:
+Add: 10
+Sub: 4
+Div: 6
+Multi: 21
+Mod: 1
+
+-------------------------------------------------------------
+
+multilevel inheritance :
+
+class A
+add() :no return and no argument 
+
+class B
+sub():no return and  argument 
+
+class C
+div:return and no argument 
+
+class D 
+multi : return and argument 
+
+class Main 
+covariant return type 
+
+	main() :Main k through all parent ki property access krni hey 
+
+
+class A{
+    void add(){
+        int a= 10, b=4;
+        System.out.println("Add: " + (a+b));
+    }
+}
+class B extends A{
+    void sub(int a, int b){
+        System.out.println("Sub: " + (a-b));
+    }
+}
+class C extends B{
+    int div(){
+        int a=13, b=5;
+        return a/b;
+    }
+}
+class D extends C{
+    int multi(int a, int b){
+        return a*b;
+    }
+}
+public class Main extends D{
+    int a= 18, b=5;
+    Main mod(int a, int b){
+        this.a= a;
+        this.b= b;
+        System.out.println("Mod: " + (a%b));
+        return this;
+    }
+    public static void main(String args[]){
+        Main obj= new Main();
+        obj.add();
+        obj.sub(13,9);
+        System.out.println("Div: " + obj.div());
+        System.out.println("Multi: " + obj.multi(7,3));
+        obj.mod(7,3);
+    }
+}
+
+
+Output:
+Add: 14
+Sub: 4
+Div: 2
+Multi: 21
+Mod: 1
+
+-------------------------------------------------------------
+
+multilevel inheritance :instance variable :constant 
+
+class A
+add() :no return and no argument 
+
+class B
+sub():no return and  argument 
+
+class C
+div:return and no argument 
+
+class D 
+multi : return and argument 
+
+class Main 
+covariant return type 
+
+	main() :Main k through all parent ki property access krni hey 
+
+
+
+class A{
+    int a=17, b=5;
+    void add(){
+        System.out.println("Add: " + (a+b));
+    }
+}
+class B extends A{
+    void sub(int a, int b){
+        this.a= a;
+        this.b= b;
+        System.out.println("Sub: " + (a-b));
+    }
+}
+class C extends B{
+    int div(){
+        return a/b;
+    }
+}
+class D extends C{
+    int multi(int a, int b){
+        return a*b;
+    }
+}
+public class Main extends D{
+    Main mod(){
+        System.out.println("Mod: " + (a%b));
+        return this;
+    }
+    public static void main(String args[]){
+        Main obj= new Main();
+        obj.add();
+        obj.sub(obj.a, obj.b);
+        System.out.println("Div: " + obj.div());
+        System.out.println("Multi: " + obj.multi(obj.a, obj.b));
+        obj.mod();
+    }
+}
+
+
+Output:
+Add: 22
+Sub: 12
+Div: 3
+Multi: 85
+Mod: 2
+
+-------------------------------------------------------------
+
+multilevel inheritance :instance variable :different variable 
+
+class A
+add() :no return and no argument 
+
+class B
+sub():no return and  argument 
+
+class C
+div:return and no argument 
+
+class D 
+multi : return and argument 
+
+class Main 
+covariant return type 
+
+	main() :Main k through all parent ki property access krni hey 
+
+
+
+class A{
+    int a,b;
+    void add(){
+        int x=12, y=4;
+        a=x;
+        b=y;
+        System.out.println("Add: " + (a+b));
+    }
+}
+class B extends A{
+    void sub(int x, int y){
+        System.out.println("Sub: " + (a-b));
+    }
+}
+class C extends B{
+    int div(){
+        return a/b;
+    }
+}
+class D extends C{
+    int multi(int x, int y){
+        return a*b;
+    }
+}
+public class Main extends D{
+    Main mod(){
+        System.out.println("Mod: " + (a%b));
+        return this;
+    }
+    public static void main(String args[]){
+        Main obj= new Main();
+        obj.add();
+        obj.sub(obj.a, obj.b);
+        System.out.println("Div: " + obj.div());
+        System.out.println("Multi: " + obj.multi(obj.a, obj.b));
+        obj.mod();
+    }
+}
+
+
+Output:
+Add: 16
+Sub: 8
+Div: 3
+Multi: 48
+Mod: 0
+
+-------------------------------------------------------------
+
+multilevel inheritance :instance variable :same variable :getter setter
+
+
+class A
+add() :no return and no argument 
+
+class B
+sub():no return and  argument 
+
+class C
+div:return and no argument 
+
+class D 
+multi : return and argument 
+
+class Main 
+covariant return type 
+
+	main() :Main k through all parent ki property access krni hey 
+
+
+
+class A{
+    int a,b;
+    void setValues(int a, int b){
+        this.a= a;
+        this.b= b;
+    }
+    void getAdd(){
+        System.out.println("Add: " + (a+b));
+    }
+}
+class B extends A{
+    int c, d;
+    void setValues2(int c, int d){
+        this.c= c;
+        this.d= d;
+    }
+    void getSub(int c, int d){
+        System.out.println("Sub: " + (c-d));
+    }
+}
+class C extends B{
+    int e, f;
+    void setValues3(int e, int f){
+        this.e= e;
+        this.f= f;
+    }
+    int getDiv(){
+        return e/f;
+    }
+}
+class D extends C{
+    int g,h;
+    void setValues4(int g, int h){
+        this.g= g;
+        this.h= h;
+    }
+    int getMulti(int g, int h){
+        return g*h;
+    }
+}
+public class Main extends D{
+    int i, j;
+    Main mod(int i, int j){
+        this.i= i;
+        this.j= j;
+        System.out.println("Mod: " + (i%j));
+        return this;
+    }
+    public static void main(String args[]){
+        Main obj= new Main();
+        obj.setValues(4,6);
+        obj.getAdd();
+        obj.setValues2(29,7);
+        obj.getSub(obj.c, obj.d);
+        obj.setValues3(49,8);
+        System.out.println("Div: " + obj.getDiv());
+        obj.setValues4(19,3);
+        System.out.println("Multi: " + obj.getMulti(obj.g, obj.h));
+        obj.mod(9,2);
+    }
+}
+
+
+
+Output:
+Add: 10
+Sub: 22
+Div: 6
+Multi: 57
+Mod: 1
+
+-------------------------------------------------------------
+
+multilevel inheritance :instance variable  
+
+
+class A
+instance variable  
+
+class B
+instance variable  
+
+class C
+instance variable  
+
+class D 
+instance variable  
+
+class Main 
+covariant return type 
+add() 
+sub()
+multi()
+
+	main() :Main k through all parent ki property access krni hey
+
+
+
+class A{
+    int a;
+    void setA(int a){
+        this.a= a;
+    }
+}
+class B extends A{
+    int b;
+    void setB(int b){
+        this.b= b;
+    }
+}
+class C extends B{
+    int c;
+    void setC(int c){
+        this.c= c;
+    }
+}
+class D extends C{
+    int d;
+    void setD(int d){
+        this.d= d;
+    }
+}
+public class Main extends D{
+    Main show(){
+        System.out.println("This is main class");
+        return this;
+    }
+    int add(){
+        return a+b+c+d;
+    }
+    int sub(){
+        return a-b-c-d;
+    }
+    int multi(){
+        return a*b*c*d;
+    }
+    public static void main(String args[]){
+        Main obj= new Main();
+        obj.setA(12);
+        obj.setB(6);
+        obj.setC(7);
+        obj.setD(2);
+        obj.show();
+        System.out.println(obj.add());
+        System.out.println(obj.sub());
+        System.out.println(obj.multi());
+    }
+}
+
+
+Output:
+ This is main class
+27
+-3
+1008
+
+-------------------------------------------------------------
+
+class A
+instance variable  :protected 
+
+class B
+instance variable  :protected 
+
+class C
+instance variable  :protected 
+class D 
+instance variable  :protected 
+
+class Main 
+covariant return type 
+add() 
+sub()
+multi()
+
+	main() :Main k through all parent ki property access krni hey 
+
+
+
+class A{
+    protected int a;
+    void setA(int a){
+        this.a= a;
+    }
+}
+class B extends A{
+    protected int b;
+    void setB(int b){
+        this.b= b;
+    }
+}
+class C extends B{
+    protected int c;
+    void setC(int c){
+        this.c= c;
+    }
+}
+class D extends C{
+    protected int d;
+    void setD(int d){
+        this.d= d;
+    }
+}
+public class Main extends D{
+    Main show(){
+        System.out.println("This is main class");
+        return this;
+    }
+    int add(){
+        return a+b+c+d;
+    }
+    int sub(){
+        return a-b-c-d;
+    }
+    int multi(){
+        return a*b*c*d;
+    }
+    public static void main(String args[]){
+        Main obj= new Main();
+        obj.setA(8);
+        obj.setB(7);
+        obj.setC(7);
+        obj.setD(6);
+        obj.show();
+        System.out.println(obj.add());
+        System.out.println(obj.sub());
+        System.out.println(obj.multi());
+    }
+}
+
+
+Output:
+This is main class
+28
+-12
+2352
+
+-------------------------------------------------------------
+
+class A
+instance variable  :public 
+
+class B
+instance variable  :public 
+
+class C
+instance variable  :public 
+class D 
+instance variable  :public 
+
+class Main 
+covariant return type 
+add() 
+sub()
+multi()
+
+	main() :Main k through all parent ki property access krni hey 
+
+
+
+class A{
+    public int a;
+    void setA(int a){
+        this.a= a;
+    }
+}
+class B extends A{
+    public int b;
+    void setB(int b){
+        this.b= b;
+    }
+}
+class C extends B{
+    public int c;
+    void setC(int c){
+        this.c= c;
+    }
+}
+class D extends C{
+    public int d;
+    void setD(int d){
+        this.d= d;
+    }
+}
+public class Main extends D{
+    Main show(){
+        System.out.println("This is main class");
+        return this;
+    }
+    int add(){
+        return a+b+c+d;
+    }
+    int sub(){
+        return a-b-c-d;
+    }
+    int multi(){
+        return a*b*c*d;
+    }
+    public static void main(String args[]){
+        Main obj= new Main();
+        obj.setA(17);
+        obj.setB(3);
+        obj.setC(2);
+        obj.setD(4);
+        obj.show();
+        System.out.println(obj.add());
+        System.out.println(obj.sub());
+        System.out.println(obj.multi());
+    }
+}
+
+
+Output:
+This is main class
+26
+8
+408
+
+-------------------------------------------------------------
+
+class A
+default constructor 
+
+class B
+default constructor 
+
+class C
+default constructor 
+
+class D 
+default constructor 
+
+class Main 
+default constructor 
+
+	main() :Main k through all parent ki property access krni hey
+
+
+
+class A{
+    A(){
+        System.out.println("A class constructor");
+    }
+}
+class B extends A{
+    B(){
+        System.out.println("B class constructor");
+    }
+}
+class C extends B{
+    C(){
+        System.out.println("C class constructor");
+    }
+}
+class D extends C{
+    D(){
+        System.out.println("D class constructor");
+    }
+}
+public class Main extends D{
+    Main(){
+        System.out.println("Main class constructor");
+    }
+    public static void main(String args[]){
+        new Main();
+    }
+}
+
+
+Output:
+A class constructor
+B class constructor
+C class constructor
+D class constructor
+Main class constructor 
+
+-------------------------------------------------------------
+
+class A
+default constructor :addition :user input  
+
+class B
+default constructor :substraction :user input 
+
+class C
+default constructor :multi :user input 
+
+class D 
+default constructor :div :user input 
+
+class Main 
+default constructor :modular :user input 
+
+	main() :Main k through all parent ki property access krni hey 
+
+
+
+import java.util.Scanner;
+class A{
+    A(){
+        System.out.println("Enter 2 numbers for addition");
+        Scanner sc= new Scanner(System.in);
+        int a= sc.nextInt();
+        int b= sc.nextInt();
+        System.out.println("Addition: " + (a+b));
+    }
+}
+class B extends A{
+    B(){
+        System.out.println("Enter 2 numbers for subtraction");
+        Scanner sc= new Scanner(System.in);
+        int a= sc.nextInt();
+        int b= sc.nextInt();
+        System.out.println("Subtraction: " + (a-b));
+    }
+}
+class C extends B{
+    C(){
+        System.out.println("Enter 2 numbers for multiplication");
+        Scanner sc= new Scanner(System.in);
+        int a= sc.nextInt();
+        int b= sc.nextInt();
+        System.out.println("Multiplication: " + (a*b));
+    }
+}
+class D extends C{
+    D(){
+        System.out.println("Enter 2 numbers for division");
+        Scanner sc= new Scanner(System.in);
+        int a= sc.nextInt();
+        int b= sc.nextInt();
+        System.out.println("Division: " + (a/b));
+    }
+}
+public class Main extends D{
+    Main(){
+        System.out.println("Enter 2 numbers for modulus");
+        Scanner sc= new Scanner(System.in);
+        int a= sc.nextInt();
+        int b= sc.nextInt();
+        System.out.println("Modulus: " + (a%b));
+    }
+    public static void main(String args[]){
+        new Main();
+    }
+}
+
+
+Output:
+Enter 2 numbers for addition
+4 7
+Addition: 11
+Enter 2 numbers for subtraction
+17 8
+Subtraction: 9
+Enter 2 numbers for multiplication
+7 3
+Multiplication: 21
+Enter 2 numbers for division
+29 7
+Division: 4
+Enter 2 numbers for modulus
+35 6
+Modulus: 5
+
+------------------------------------------------------------------------
+
+class A
+
+class B ex A 
+
+class C
+
+class D ex C
+
+class E ex D
+
+class F 
+
+class G ex F 
+
+class Main 
+	main method :
+
+
+class A{
+    void showA(){
+        System.out.println("Class A");
+    }
+}
+class B extends A{
+    void showB(){
+        System.out.println("Class B");
+    }
+
+}
+class C{
+    void showC(){
+        System.out.println("Class C");
+    }
+}
+class D extends C{
+    void showD(){
+        System.out.println("Class D");
+    }
+}
+class E extends D{
+    void showE(){
+        System.out.println("Class E");
+    }
+}
+class F{
+    void showF(){
+        System.out.println("Class F");
+    }
+}
+class G extends F{
+    void showG(){
+        System.out.println("Class G");
+    }
+}
+public class Main extends D{
+    public static void main(String args[]){
+        B obB= new B();
+        obB.showA();
+        obB.showB();
+        E obE= new E();
+        obE.showC();
+        obE.showD();
+        obE.showE();
+        G obG= new G();
+        obG.showF();
+        obG.showG();
+    }
+}
+
+
+Output:
+Class A
+Class B
+Class C
+Class D
+Class E
+Class F
+Class G
+
+------------------------------------------------------------------------
