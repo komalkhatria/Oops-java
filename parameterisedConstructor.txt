@@ -1,0 +1,524 @@
+parameterised constructor :
+------------------------------------------------------------------------
+
+class A
+constructor :two number addition
+
+class B
+constructor :two number multiplication
+
+class C
+constructor :two number division
+
+class D
+constructor :two number modular
+
+class Main 
+constructor :two number substraction 
+
+main method access 
+
+
+class A{
+    int a, b;
+    A(int a, int b){
+        this.a =a;
+        this.b=b;
+        System.out.println("Add= " + (a+b));
+    }
+}
+class B{
+    int a, b;
+    B(int a, int b){
+        this.a= a;
+        this.b= b;
+        System.out.println("Mul= " + (a*b));
+    }
+}
+class C{
+    int a, b;
+    C(int a, int b){
+        this.a= a;
+        this.b= b;
+        System.out.println("Div= " + (a/b));
+    }
+}
+class D{
+    int a, b;
+    D(int a, int b){
+        this.a= a;
+        this.b= b;
+        System.out.println("mod= " + (a%b));
+    }
+}
+public class Main{
+    int a, b;
+    Main(int a, int b){
+        this.a= a;
+        this.b= b;
+        System.out.println("sub= " + (a-b));
+    }
+    public static void main(String[] args){
+        A a= new A(12,9);
+        B b= new B(4, 6);
+        C c= new C(12,5);
+        D d= new D(18,7);
+        Main m= new Main(11,8);
+    }
+}
+
+
+Output:
+Add= 21
+Mul= 24
+Div= 2
+mod= 4
+sub= 3
+
+------------------------------------------------------------------------
+
+class A
+constructor :two number addition
+method :no return and no argument 
+
+class B
+constructor :two number multiplication
+method :no return and  argument 
+
+class C
+constructor :two number division
+method : return and no argument 
+
+class D
+constructor :two number modular
+method : return and  argument 
+
+class Main 
+constructor :two number substraction 
+method :covariant return type 
+
+main method access 
+
+
+
+class A{
+    A(int n1, int n2){
+        int a= n1, b= n2;
+        System.out.println("Add= " + (a+b));
+    }
+    void show(){
+        System.out.println("Class A");
+    }
+}
+class B{
+    B(int n1, int n2){
+        int a= n1, b= n2;
+        System.out.println("Mul= " + (a*b));
+    }
+    void showB(int n){
+        System.out.println("This is class "+ n);
+    }
+}
+class C{
+    int a, b;
+    C(int n1, int n2){
+        int a= n1, b= n2;
+        System.out.println("Div= " + (a/b));
+    }
+    int showC(){
+        int x=12;
+        return x;
+    }
+}
+class D{
+    D(int n1, int n2){
+        int a= n1, b= n2;
+        System.out.println("mod= " + (a%b));
+    }
+    int showD(int n){
+        int x=n;
+        return x;
+    }
+}
+public class Main{
+    Main(int n1, int n2){
+        int a= n1, b= n2;
+        System.out.println("sub= " + (a-b));
+    }
+    Main show(){
+        System.out.println("Co-variant type");
+        return this;
+    }
+    public static void main(String[] args){
+        A a= new A(12,9);
+        a.show();
+        B b= new B(4, 6);
+        b.showB(4);
+        C c= new C(12,5);
+        System.out.println(c.showC());
+        D d= new D(18,7);
+        System.out.println(d.showD(7));
+        Main m= new Main(11,8);
+        m.show();
+    }
+}
+
+Output:
+Add= 21
+Class A
+Mul= 24
+This is class 4
+Div= 2
+12
+mod= 4
+7
+sub= 3
+Co-variant type
+
+------------------------------------------------------------------------
+
+through instance variable :
+
+class A
+constructor :two number addition
+
+class B
+constructor :two number multiplication
+
+class C
+constructor :two number division
+
+class D
+constructor :two number modular
+
+class Main 
+constructor :two number substraction 
+
+main method access 
+
+
+class A{
+    int a, b;
+    A(int a, int b){
+        this.a =a;
+        this.b=b;
+        System.out.println("Add= " + (a+b));
+    }
+}
+class B{
+    int a, b;
+    B(int a, int b){
+        this.a= a;
+        this.b= b;
+        System.out.println("Mul= " + (a*b));
+    }
+}
+class C{
+    int a, b;
+    C(int a, int b){
+        this.a= a;
+        this.b= b;
+        System.out.println("Div= " + (a/b));
+    }
+}
+class D{
+    int a, b;
+    D(int a, int b){
+        this.a= a;
+        this.b= b;
+        System.out.println("mod= " + (a%b));
+    }
+}
+public class Main{
+    int a, b;
+    Main(int a, int b){
+        this.a= a;
+        this.b= b;
+        System.out.println("sub= " + (a-b));
+    }
+    public static void main(String[] args){
+        A a= new A(12,9);
+        B b= new B(4, 6);
+        C c= new C(12,5);
+        D d= new D(18,7);
+        Main m= new Main(11,8);
+    }
+}
+
+
+Output:
+Add= 21
+Mul= 24
+Div= 2
+mod= 4
+sub= 3
+
+------------------------------------------------------------------------
+
+class A
+no return and no argument 
+
+class B ex A 
+no return and argument 
+
+class Main 
+main access
+
+
+class A{
+    void show(){
+        System.out.println("Parent class A");
+    }
+}
+class B extends A{
+    void showB(int n){
+        System.out.println("Child class id is " + n);
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        B obj= new B();
+        obj.show();
+        obj.showB(2);
+    }
+}
+
+
+Output:
+Parent class A
+Child class id is 2
+
+------------------------------------------------------------------------
+
+class A
+covariant return type 
+
+class B ex A 
+covariant return type 
+
+class Main 
+main access
+
+
+class A{
+    A display(){
+        System.out.println("Parent class A");
+        return this;
+    }
+}
+class B extends A{
+    B displayB(){
+        System.out.println("Child class B");
+        return this;
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        B obj= new B();
+        obj.display();
+        obj.displayB();
+    }
+}
+
+
+Output:
+Parent class A
+Child class B
+
+------------------------------------------------------------------------
+
+class A
+covariant return type 
+
+
+class Main ex A
+covariant return type 
+
+main access
+
+
+class A{
+    A display(){
+        System.out.println("Parent class A");
+        return this;
+    }
+}
+public class Main extends A{
+    Main displayMain(){
+        System.out.println("Child class Main");
+        return this;
+    }
+    public static void main(String[] args){
+        Main obj= new Main();
+        obj.display();
+        obj.displayMain();
+    }
+}
+
+
+Output:
+Parent class A
+Child class Main
+
+------------------------------------------------------------------------
+
+class College 
+instance variable : 
+
+cname
+caddress 
+cnumber
+cexpertise
+cfacutly 
+
+method :access print 
+
+class Student 
+
+sid
+sname
+scourse
+saddress
+sfname
+smname 
+
+class Main 
+main method access 
+
+
+
+import java.util.Scanner;
+
+import java.util.Scanner;
+class College{
+    String cname, caddress, expertise;
+    int faculty;
+    long number;
+
+
+}
+
+class  Student extends College{
+    int id;
+    String name, course, address, fname, mname;
+
+    void setCollegeDetails(String cname, String caddress, long number, String expertise, int faculty){
+        this.cname= cname;
+        this.caddress= caddress;
+        this.number= number;
+        this.expertise= expertise;
+        this.faculty= faculty;
+    }
+    void setStudentDetails(int id, String name, String course, String address, String fname, String mname){
+        this.id= id;
+        this.name= name;
+        this.course= course;
+        this.address= address;
+        this.fname= fname;
+        this.mname= mname;
+    }
+
+    void printCollegeDetails(){
+        System.out.println("College Details: ");
+        System.out.println("Name: " + cname);
+        System.out.println("Address: " + caddress);
+        System.out.println("Number: " + number);
+        System.out.println("Expertise: " + expertise);
+        System.out.println("Faculty: " + faculty);
+    }
+    void getStudentDetails(){
+        System.out.println("Student details: ");
+        System.out.println("Id: " + id);
+        System.out.println("Name: " + name);
+        System.out.println("Course: " + course);
+        System.out.println("Address: " + address);
+        System.out.println("Father's name: " + fname);
+        System.out.println("Mother's name: " + mname);
+    }
+}
+public class Main{
+
+    public static void main(String[] args){
+        Scanner sc= new Scanner(System.in);
+        String cname, caddress, expertise;
+        int faculty;
+        long number;
+        System.out.println("Enter college details: ");
+        System.out.print("Name: ");
+        cname= sc.nextLine();
+        System.out.print("Address: ");
+        caddress= sc.nextLine();
+        System.out.print("Number: ");
+        number= sc.nextLong();
+        System.out.print("Expertise: ");
+        sc.nextLine();
+        expertise= sc.nextLine();
+        System.out.print("Faculty: ");
+        faculty= sc.nextInt();
+
+
+        int id;
+        String sname, course, saddress, fname, mname;
+        System.out.println();
+        System.out.println("Enter student details: ");
+        System.out.print("Id: ");
+        id= sc.nextInt();
+        System.out.print("Name: ");
+        sc.nextLine();
+        sname= sc.nextLine();
+        System.out.print("Course: ");
+        course= sc.nextLine();
+        System.out.print("Address: ");
+        saddress= sc.nextLine();
+        System.out.print("Father's name: ");
+        fname= sc.nextLine();
+        System.out.print("Mother's name: ");
+        mname= sc.nextLine();
+        System.out.println();
+
+        Student obj= new Student();
+        obj.setCollegeDetails(cname, caddress, number, expertise, faculty);
+        obj.printCollegeDetails();
+        System.out.println();
+
+        Student st= new Student();
+        st.setStudentDetails(id, sname, course, saddress, fname, mname);
+        st.getStudentDetails();
+
+
+    }
+}
+
+
+
+Output:
+Enter college details: 
+Name: Technical College
+Address: Jaipur, Rajasthan
+Number: 9876543210
+Expertise: Engineering
+Faculty: 85
+
+Enter student details: 
+Id: 101
+Name: Aryan
+Course: Btech
+Address: Jaipur, Rajasthan
+Father's name: Pushpendra
+Mother's name: Kavita
+
+College Details: 
+Name: Technical College
+Address: Jaipur, Rajasthan
+Number: 9876543210
+Expertise: Engineering
+Faculty: 85
+
+Student details: 
+Id: 101
+Name: Aryan
+Course: Btech
+Address: Jaipur, Rajasthan
+Father's name: Pushpendra
+Mother's name: Kavita
+------------------------------------------------------------------------
