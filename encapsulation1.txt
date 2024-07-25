@@ -1,0 +1,551 @@
+first way :
+
+class A
+	instance variable :
+	method :two number addition 
+
+class Main 
+main method 
+
+
+class A{
+    int a=4, b=9;
+    int add(){
+        int c= a+b;
+        return c;
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        A obj= new A();
+        System.out.println(obj.add());
+    }
+}
+
+Output:
+13
+
+------------------------------------------------------------------------
+second way : 
+
+class A
+	instance variable a,b,c,d,e,f
+	method :two variable addition
+	method :two variable sub
+	method :two variable div
+
+class Main 
+	instance variable :
+	method :two number addition 
+
+main method :
+
+
+class A{
+    int a, b, c, d, e, f;
+    int add(int x, int y){
+        a= x;
+	b= y;
+        return a+b;
+    }
+    int sub(int x, int y){
+        c= x;
+	d=y;
+        return c-d;
+    }
+    int div(int x, int y){
+        e= x;
+	f=y;
+        return e/f;
+    }
+}
+public class Main{
+    int a, b;
+    int add(int x, int y){
+        a=x;
+	b=y;
+        return a+b;
+    }
+    public static void main(String[] args){
+        int x=23,y=4;
+        A obj= new A();
+        System.out.println("Add: "+obj.add(12,19));
+        System.out.println("Sub: "+obj.sub(23,15));
+        System.out.println("Div: "+obj.div(89,12));
+        Main ob= new Main();
+        System.out.println("(covariant) add: " +ob.add(x,y));
+    }
+}
+
+Output:
+Add: 31
+Sub: 8
+Div: 7
+(covariant) add: 27
+
+------------------------------------------------------------------------
+
+third way : 
+
+class A
+	instance variable a,b,c,d,e,f
+	method :two variable addition
+	method :two variable sub
+	method :two variable div
+
+class Main 
+	instance variable :
+	method :two number addition 
+
+main method :
+
+
+class A{
+    int a, b, c, d, e, f;
+    int add(int a, int b){
+        this.a= a;
+        this.b= b;
+        int result= a+b;
+        return result;
+    }
+    int sub(int c, int d){
+        this.c= c;
+        this.d= d;
+        int result= c-d;
+        return result;
+    }
+    int div(int e, int f){
+        this.e= e;
+        this.f= f;
+        int result= e/f;
+        return result;
+    }
+}
+public class Main{
+    int a, b;
+    int add(int a, int b){
+        this.a= a;
+        this.b=b;
+        int result= a+b;
+        return result;
+    }
+    public static void main(String[] args){
+        int x=23,y=4;
+        A obj= new A();
+        System.out.println("Add: "+obj.add(13,11));
+        System.out.println("Sub: "+obj.sub(21,4));
+        System.out.println("Div: "+obj.div(18,7));
+        Main ob= new Main();
+        System.out.println("(covariant) add: " +ob.add(x,y));
+    }
+}
+
+
+Output:
+Add: 24
+Sub: 17
+Div: 2
+(covariant) add: 27
+
+------------------------------------------------------------------------
+
+getter setter method :
+all primitive data type with String 
+
+
+public class Main{
+    private byte b;
+    private short s;
+    private int i;
+    private long l;
+    private float f;
+    private double d;
+    private char c;
+    private boolean bool;
+    private String str;
+
+    void setByte(byte b){
+        this.b=b;
+    }
+    byte getByte(){
+        return b;
+    }
+    void setShort(short s){
+        this.s=s;
+    }
+    short getShort(){
+        return s;
+    }
+    void setInt(int i){
+        this.i=i;
+    }
+    int getInt(){
+        return i;
+    }
+    void setLong(long l){
+        this.l=l;
+    }
+    long getLong(){
+        return l;
+    }
+    void setFloat(float f){
+        this.f=f;
+    }
+    float getFloat(){
+        return f;
+    }
+    void setDouble(double d){
+        this.d=d;
+    }
+    double getDouble(){
+        return d;
+    }
+    void setChar(char c){
+        this.c=c;
+    }
+    char getChar(){
+        return c;
+    }
+    void setBoolean(boolean bool){
+        this.bool=bool;
+    }
+    boolean getBoolean(){
+        return bool;
+    }
+    void setString(String str){
+        this.str=str;
+    }
+    String getString(){
+        return str;
+    }
+    public static void main(String[] args){
+        Main obj= new Main();
+        obj.setByte((byte)5);
+        System.out.println("Byte: " + obj.getByte());
+        obj.setShort((short)157);
+        System.out.println("Short: " + obj.getShort());
+        obj.setInt(13500);
+        System.out.println("Int: " + obj.getInt());
+        obj.setLong(987654321L);
+        System.out.println("Long: " + obj.getLong());
+        obj.setFloat(209.50f);
+        System.out.println("Float: " + obj.getFloat());
+        obj.setDouble(98735.56);
+        System.out.println("Double: " + obj.getDouble());
+        obj.setChar('A');
+        System.out.println("Char: " + obj.getChar());
+        obj.setBoolean(true);
+        System.out.println("Boolean: " + obj.getBoolean());
+        obj.setString("Hello world");
+        System.out.println("String: " + obj.getString());
+    }
+}
+
+
+Output:
+Byte: 5
+Short: 157
+Int: 13500
+Long: 987654321
+Float: 209.5
+Double: 98735.56
+Char: A
+Boolean: true
+String: Hello world
+
+------------------------------------------------------------------------
+
+user input :
+
+name
+fname
+nmame
+class
+address
+contact 
+roll_no 
+gender 
+marks 
+
+getter setter 
+
+
+import java.util.Scanner;
+public class Main{
+    String name, fname, mname, add;
+    int std, roll, marks;
+    char gender;
+    long contact;
+    void setName(String name){
+        this.name= name;
+    }
+    String getName(){
+        return name;
+    }
+    void setFname(String fname){
+        this.fname= fname;
+    }
+    String getFname(){
+        return fname;
+    }
+    void setMname(String mname){
+        this.mname= mname;
+    }
+    String getMname(){
+        return mname;
+    }
+
+    void setStd(int std){
+        this.std= std;
+    }
+    int getStd(){
+        return std;
+    }
+    void setAddress(String add){
+        this.add= add;
+    }
+    String getAddress(){
+        return add;
+    }
+    void setContact(long contact){
+        this.contact= contact;
+    }
+    long getContact(){
+        return contact;
+    }
+    void setRoll(int roll){
+        this.roll=roll;
+    }
+    int getRoll(){
+        return roll;
+    }
+    void setGender(char gender){
+        this.gender=gender;
+    }
+    char getGender(){
+        return gender;
+    }
+    void setMarks(int marks){
+        this.marks=marks;
+    }
+    int getMarks(){
+        return marks;
+    }
+    public static void main(String[] args){
+        Scanner sc= new Scanner(System.in);
+        Main obj= new Main();
+        System.out.print("Enter name: ");
+        obj.setName(sc.next());
+        System.out.print("Enter father's name: ");
+        obj.setFname(sc.next());
+        System.out.print("Enter mother's name: ");
+        obj.setMname(sc.next());
+        System.out.print("Enter class: ");
+        obj.setStd(sc.nextInt());
+        System.out.print("Enter address: ");
+        obj.setAddress(sc.nextLine());
+        obj.setAddress(sc.nextLine());
+        System.out.print("Enter contact: ");
+        obj.setContact(sc.nextLong());
+        System.out.print("Enter roll no: ");
+        obj.setRoll(sc.nextInt());
+        System.out.print("Enter gender: ");
+        obj.setGender(sc.next().charAt(0));
+        System.out.print("Enter marks: ");
+        obj.setMarks(sc.nextInt());
+        System.out.println("Name: " + obj.getName());
+        System.out.println("Father's Name: " + obj.getFname());
+        System.out.println("Mother's Name: " + obj.getMname());
+        System.out.println("Class: " + obj.getStd());
+        System.out.println("Address: " + obj.getAddress());
+        System.out.println("Contact: " + obj.getContact());
+        System.out.println("Roll no: " + obj.getRoll());
+        System.out.println("Gender: " + obj.getGender());
+        System.out.println("Marks: " + obj.getMarks());
+    }
+}
+
+
+Output:
+Enter name: Lara
+Enter father's name: Andrew
+Enter mother's name: Susannah
+Enter class: 8
+Enter address: Toronto, Canada
+Enter contact: 678954321
+Enter roll no: 24
+Enter gender: F
+Enter marks: 81
+Name: Lara
+Father's Name: Andrew
+Mother's Name: Susannah
+Class: 8
+Address: Toronto, Canada
+Contact: 678954321
+Roll no: 24
+Gender: F
+Marks: 81
+
+
+------------------------------------------------------------------------
+
+company 
+
+empname
+eid
+gender
+efname
+econtact
+eaddress 
+ealternate_number 
+salary 
+edepartment 
+bankaccountnumber
+post 
+
+getter setter 
+
+
+
+import java.util.Scanner;
+public class Main{
+    String name, fname, add, dept, post;
+    int id, salary;
+    char gender;
+    long contact, contact2, acno;
+    void setName(String name){
+        this.name= name;
+    }
+    String getName(){
+        return name;
+    }
+    void setId(int id){
+        this.id= id;
+    }
+    int getId(){
+        return id;
+    }
+    void setGender(char gender){
+        this.gender=gender;
+    }
+    char getGender(){
+        return gender;
+    }
+    void setFname(String fname){
+        this.fname= fname;
+    }
+    String getFname(){
+        return fname;
+    }
+    void setContact(long contact){
+        this.contact= contact;
+    }
+    long getContact(){
+        return contact;
+    }
+    void setAddress(String add){
+        this.add= add;
+    }
+    String getAddress(){
+        return add;
+    }
+    void setContact2(long contact2){
+        this.contact2= contact2;
+    }
+    long getContact2(){
+        return contact2;
+    }
+    void setSalary(int salary){
+        this.salary= salary;
+    }
+    int getSalary(){
+        return salary;
+    }
+    void setDept(String dept){
+        this.dept= dept;
+    }
+    String getDept(){
+        return dept;
+    }
+    void setAcno(long acno){
+        this.acno=acno;
+    }
+    long getAcno(){
+        return acno;
+    }
+    void setPost(String post){
+        this.post=post;
+    }
+    String getPost(){
+        return post;
+    }
+
+    public static void main(String[] args){
+        Scanner sc= new Scanner(System.in);
+        Main obj= new Main();
+        System.out.print("Enter name: ");
+        obj.setName(sc.next());
+        System.out.print("Enter id: ");
+        obj.setId(sc.nextInt());
+        System.out.print("Enter gender: ");
+        obj.setGender(sc.next().charAt(0));
+        System.out.print("Enter father's name: ");
+        obj.setFname(sc.next());
+        System.out.print("Enter contact: ");
+        obj.setContact(sc.nextLong());
+        System.out.print("Enter address: ");
+        obj.setAddress(sc.nextLine());
+        obj.setAddress(sc.nextLine());
+        System.out.print("Enter alternate contact: ");
+        obj.setContact2(sc.nextLong());
+        System.out.print("Enter salary: ");
+        obj.setSalary(sc.nextInt());
+        System.out.print("Enter department: ");
+        obj.setDept(sc.next());
+        System.out.print("Enter bank account no: ");
+        obj.setAcno(sc.nextLong());
+        System.out.print("Enter post: ");
+        obj.setPost(sc.next());
+	System.out.println();
+
+        System.out.println("Employee Name: " + obj.getName());
+        System.out.println("Employee id: " + obj.getId());
+        System.out.println("Gender: " + obj.getGender());
+        System.out.println("Father's Name: " + obj.getFname());
+        System.out.println("Contact no: " + obj.getContact());
+        System.out.println("Address: " + obj.getAddress());
+        System.out.println("Alternate contact no: " + obj.getContact2());
+        System.out.println("Salary: " + obj.getSalary());
+        System.out.println("Department: " + obj.getDept());
+        System.out.println("Bank a/c no: " + obj.getAcno());
+        System.out.println("Post: " + obj.getPost());
+    }
+}
+
+
+Output:
+Enter name: Brian
+Enter id: 201
+Enter gender: M
+Enter father's name: Andrew
+Enter contact: 5678943210
+Enter address: Los Angeles
+Enter alternate contact: 5432167890
+Enter salary: 1200000
+Enter department: Finance
+Enter bank account no: 90018000620
+Enter post: Manager
+
+Employee Name: Brian
+Employee id: 201
+Gender: M
+Father's Name: Andrew
+Contact no: 5678943210
+Address: Los Angeles
+Alternate contact no: 5432167890
+Salary: 1200000
+Department: Finance
+Bank a/c no: 90018000620
+Post: Manager
+
+------------------------------------------------------------------------
