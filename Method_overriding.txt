@@ -1,0 +1,1070 @@
+single level inheritance :method overriding :no return and no argument 
+	solve problem 
+
+
+class A{
+    void show(){
+        System.out.println("Class A method");
+    }
+}
+class B extends A{
+    void show(){
+        System.out.println("Class B method");
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        B obj= new B();
+        obj.show();
+    }
+}
+
+
+Output:
+Class B method
+
+
+
+//PROBLEM SOLUTION
+class A{
+    void show(){
+        System.out.println("Class A method");
+    }
+}
+class B extends A{
+    void show(){
+        super.show();
+        System.out.println("Class B method");
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        B obj= new B();
+        obj.show();
+    }
+}
+
+
+Output:
+Class A method
+Class B method
+
+-------------------------------------------------------------------------------------------
+
+multilevel inheritance :method overriding :no return and no argument 
+			solve problem 
+
+
+class A{
+    void show(){
+        System.out.println("Class A method");
+    }
+}
+class B extends A{
+    void show(){
+        System.out.println("Class B method");
+    }
+}
+class C extends B{
+    void show(){
+        System.out.println("Class C method");
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        C obj= new C();
+        obj.show();
+    }
+}
+
+Output:
+Class C method
+
+
+//PROBLEM SOLUTION
+class A{
+    void show(){
+        System.out.println("Class A method");
+    }
+}
+class B extends A{
+    void show(){
+        super.show();
+        System.out.println("Class B method");
+    }
+}
+class C extends B{
+    void show(){
+        super.show();
+        System.out.println("Class C method");
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        C obj= new C();
+        obj.show();
+    }
+}
+
+
+Output:
+Class A method
+Class B method
+Class C method
+
+
+
+
+heirarichal inheritance :method overriding :no return and no argument 
+			solve problem 
+
+
+class A{
+    void show(){
+        System.out.println("Class A method");
+    }
+}
+class B extends A{
+    void show(){
+        System.out.println("Class B method");
+    }
+}
+class C extends A{
+    void show(){
+        System.out.println("Class C method");
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        B obB= new B();
+        obB.show();
+        C obC= new C();
+        obC.show();
+    }
+}
+
+Output:
+Class B method
+Class C method
+
+
+
+//PROBLEM SOLUTION
+class A{
+    void show(){
+        System.out.println("Class A method");
+    }
+}
+class B extends A{
+    void show(){
+        super.show();
+        System.out.println("Class B method");
+    }
+}
+class C extends A{
+    void show(){
+        super.show();
+        System.out.println("Class C method");
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        B obB= new B();
+        obB.show();
+        C obC= new C();
+        obC.show();
+    }
+}
+
+Output:
+Class A method
+Class B method
+Class A method
+Class C method
+
+-------------------------------------------------------------------------------------------
+user input 
+
+single level inheritance :method overriding : return and  argument 
+	solve problem 
+
+
+class A{
+    int show(int a){
+        System.out.println("Class A method " + a);
+        return 0;
+    }
+}
+class B extends A{
+    int show(int a){
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Class B method " + a);
+        return 0;
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        Scanner sc= new Scanner(System.in);
+        B obB= new B();
+        System.out.print("argument for class B: ");
+        obB.show(sc.nextInt());
+    }
+}
+
+Output:
+argument for class B: 2
+Class B method 2
+
+
+
+//PROBLEM SOLUION
+import java.util.Scanner;
+class A{
+    int show(int a){
+        System.out.println("Class A method " + a);
+        return 0;
+    }
+}
+class B extends A{
+    int show(int a){
+        Scanner sc= new Scanner(System.in);
+        System.out.print("argument for class A: ");
+        super.show(sc.nextInt());
+        System.out.println("Class B method " + a);
+        return 0;
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        Scanner sc= new Scanner(System.in);
+        B obB= new B();
+        System.out.print("argument for class B: ");
+        obB.show(sc.nextInt());
+    }
+}
+
+Output:
+argument for class B: 2
+argument for class A: 1
+Class A method 1
+Class B method 2
+
+-------------------------------------------------------------------------------------------
+
+multilevel inheritance :method overriding : return and  argument 
+			solve problem 
+
+
+import java.util.Scanner;
+class A{
+    int show(int a){
+        System.out.println("Class A method " + a);
+        return 0;
+    }
+}
+class B extends A{
+    int show(int a){
+        System.out.println("Class B method " + a);
+        return 0;
+    }
+}
+class C extends B{
+    int show(int a){
+        System.out.println("Class C method " + a);
+        return 0;
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        Scanner sc= new Scanner(System.in);
+        C obC= new C();
+        System.out.print("argument for class C: ");
+        obC.show(sc.nextInt());
+    }
+}
+
+
+Output:
+argument for class C: 30
+Class C method 30
+
+
+
+//PROBLEM SOLUTION
+import java.util.Scanner;
+class A{
+    int show(int a){
+        System.out.println("Class A method " + a);
+        return 0;
+    }
+}
+class B extends A{
+    int show(int a){
+        Scanner sc= new Scanner(System.in);
+        System.out.print("argument for class A: ");
+        super.show(sc.nextInt());
+        System.out.println("Class B method " + a);
+        return 0;
+    }
+}
+class C extends B{
+    int show(int a){
+        Scanner sc= new Scanner(System.in);
+        System.out.print("argument for class B: ");
+        super.show(sc.nextInt());
+        System.out.println("Class C method " + a);
+        return 0;
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        Scanner sc= new Scanner(System.in);
+        C obC= new C();
+        System.out.print("argument for class C: ");
+        obC.show(sc.nextInt());
+    }
+}
+
+Output:
+argument for class C: 30
+argument for class B: 20
+argument for class A: 10
+Class A method 10
+Class B method 20
+Class C method 30
+
+-------------------------------------------------------------------------------------------
+
+heirarichal inheritance :method overriding : return and  argument 
+			solve problem 
+
+
+import java.util.Scanner;
+class A{
+    int show(int a){
+        System.out.println("Class A method " + a);
+        return 0;
+    }
+}
+class B extends A{
+    int show(int a){
+        System.out.println("Class B method " + a);
+        return 0;
+    }
+}
+class C extends A{
+    int show(int a){
+        System.out.println("Class C method " + a);
+        return 0;
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        Scanner sc= new Scanner(System.in);
+        B obB= new B();
+        System.out.print("argument for class B: ");
+        obB.show(sc.nextInt());
+        C obC= new C();
+        System.out.print("argument for class C: ");
+        obC.show(sc.nextInt());
+    }
+}
+
+Output:
+argument for class B: 20
+Class B method 20
+argument for class C: 30
+Class C method 30
+
+
+
+//PROBLEM SOLUTION
+import java.util.Scanner;
+class A{
+    int show(int a){
+        System.out.println("Class A method " + a);
+        return 0;
+    }
+}
+class B extends A{
+    int show(int a){
+        Scanner sc= new Scanner(System.in);
+        System.out.print("argument for class A: ");
+        super.show(sc.nextInt());
+        System.out.println("Class B method " + a);
+        return 0;
+    }
+}
+class C extends A{
+    int show(int a){
+        Scanner sc= new Scanner(System.in);
+        System.out.print("argument for class A: ");
+        super.show(sc.nextInt());
+        System.out.println("Class C method " + a);
+        return 0;
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        Scanner sc= new Scanner(System.in);
+        B obB= new B();
+        System.out.print("argument for class B: ");
+        obB.show(sc.nextInt());
+        C obC= new C();
+        System.out.print("argument for class C: ");
+        obC.show(sc.nextInt());
+    }
+}
+
+
+Output:
+argument for class B: 20
+argument for class A: 10
+Class A method 10
+Class B method 20
+argument for class C: 30
+argument for class A: 5
+Class A method 5
+Class C method 30
+
+-----------------------------------------------------------
+user input 
+
+single level inheritance :method overriding : covariant return type 
+			solve problem 
+
+
+import java.util.Scanner;
+class A{
+    A show(int a){
+        System.out.println("Class A method " + a);
+        return this;
+    }
+}
+class B extends A{
+    B show(int a){
+        System.out.println("Class B method " + a);
+        return this;
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        Scanner sc= new Scanner(System.in);
+        B obB= new B();
+        System.out.print("argument for class B: ");
+        obB.show(sc.nextInt());
+    }
+}
+
+Output:
+argument for class B: 20
+Class B method 20
+
+
+
+//PROBLEM SOLUTION
+import java.util.Scanner;
+class A{
+    A show(int a){
+        System.out.println("Class A method " + a);
+        return this;
+    }
+}
+class B extends A{
+    B show(int a){
+        Scanner sc= new Scanner(System.in);
+        System.out.print("argument for class A: ");
+        super.show(sc.nextInt());
+        System.out.println("Class B method " + a);
+        return this;
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        Scanner sc= new Scanner(System.in);
+        B obB= new B();
+        System.out.print("argument for class B: ");
+        obB.show(sc.nextInt());
+    }
+}
+
+
+Output:
+argument for class B: 20
+argument for class A: 10
+Class A method 10
+Class B method 20
+
+------------------------------------------------------------------------
+
+multilevel inheritance :method overriding :covariant return type 
+			solve problem 
+
+
+
+import java.util.Scanner;
+class A{
+    A show(int a){
+        System.out.println("Class A method " + a);
+        return this;
+    }
+}
+class B extends A{
+    B show(int a){
+        System.out.println("Class B method " + a);
+        return this;
+    }
+}
+class C extends B{
+    C show(int a){
+        System.out.println("Class C method " + a);
+        return this;
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        Scanner sc= new Scanner(System.in);
+        C obC= new C();
+        System.out.print("argument for class C: ");
+        obC.show(sc.nextInt());
+    }
+}
+
+
+Output:
+argument for class C: 30
+Class C method 30
+
+
+
+//PROBLEM SOLUTION
+import java.util.Scanner;
+class A{
+    A show(int a){
+        System.out.println("Class A method " + a);
+        return this;
+    }
+}
+class B extends A{
+    B show(int a){
+        Scanner sc= new Scanner(System.in);
+        System.out.print("argument for class A: ");
+        super.show(sc.nextInt());
+        System.out.println("Class B method " + a);
+        return this;
+    }
+}
+class C extends B{
+    C show(int a){
+        Scanner sc= new Scanner(System.in);
+        System.out.print("argument for class B: ");
+        super.show(sc.nextInt());
+        System.out.println("Class C method " + a);
+        return this;
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        Scanner sc= new Scanner(System.in);
+        C obC= new C();
+        System.out.print("argument for class C: ");
+        obC.show(sc.nextInt());
+    }
+}
+
+
+Output:
+argument for class C: 30
+argument for class B: 20
+argument for class A: 10
+Class A method 10
+Class B method 20
+Class C method 30
+
+------------------------------------------------------------------------
+
+hierarchical inheritance :method overriding : covariant return type  
+			solve problem 
+
+
+
+import java.util.Scanner;
+class A{
+    A show(int a){
+        System.out.println("Class A method " + a);
+        return this;
+    }
+}
+class B extends A{
+    B show(int a){
+        System.out.println("Class B method " + a);
+        return this;
+    }
+}
+class C extends A{
+    C show(int a){
+        System.out.println("Class C method " + a);
+        return this;
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        Scanner sc= new Scanner(System.in);
+        B obB= new B();
+        System.out.print("argument for class B: ");
+        obB.show(sc.nextInt());
+        C obC= new C();
+        System.out.print("argument for class C: ");
+        obC.show(sc.nextInt());
+    }
+}
+
+
+Output:
+argument for class B: 20
+Class B method 20
+argument for class C: 30
+Class C method 30
+
+
+
+//PROBLEM SOLUTION
+import java.util.Scanner;
+class A{
+    A show(int a){
+        System.out.println("Class A method " + a);
+        return this;
+    }
+}
+class B extends A{
+    B show(int a){
+        Scanner sc= new Scanner(System.in);
+        System.out.print("argument for class A: ");
+        super.show(sc.nextInt());
+        System.out.println("Class B method " + a);
+        return this;
+    }
+}
+class C extends A{
+    C show(int a){
+        Scanner sc= new Scanner(System.in);
+        System.out.print("argument for class A: ");
+        super.show(sc.nextInt());
+        System.out.println("Class C method " + a);
+        return this;
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        Scanner sc= new Scanner(System.in);
+        B obB= new B();
+        System.out.print("argument for class B: ");
+        obB.show(sc.nextInt());
+        C obC= new C();
+        System.out.print("argument for class C: ");
+        obC.show(sc.nextInt());
+    }
+}
+
+
+Output:
+argument for class B: 20
+argument for class A: 10
+Class A method 10
+Class B method 20
+argument for class C: 30
+argument for class A: 5
+Class A method 5
+Class C method 30
+
+-----------------------------------------------------------
+user input 
+
+single level inheritance :method overriding : 
+			method1 :no return and no argument 
+			method2 :no return and  argument 
+check overriding or not 
+	solve problem 
+
+
+import java.util.Scanner;
+class A{
+    void show(){
+        System.out.println("Class A method");
+    }
+}
+class B extends A{
+    void show(int a){
+        System.out.println("Class B method " + a);
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        Scanner sc= new Scanner(System.in);
+        B obB= new B();
+        System.out.print("argument for class B: ");
+        obB.show(sc.nextInt());
+    }
+}
+
+Output:
+argument for class B: 20
+Class B method 20
+
+
+
+//PROBLEM SOLUTION
+import java.util.Scanner;
+class A{
+    void show(){
+        System.out.println("Class A method");
+    }
+}
+class B extends A{
+    void show(int a){
+        super.show();
+        System.out.println("Class B method " + a);
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        Scanner sc= new Scanner(System.in);
+        B obB= new B();
+        System.out.print("argument for class B: ");
+        obB.show(sc.nextInt());
+    }
+}
+
+
+Output:
+argument for class B: 20
+Class A method
+Class B method 20
+
+------------------------------------------------------------------------
+
+multilevel inheritance :method overriding :covariant return type 
+			method1 : return and no argument 
+			method2 :no return and  argument 
+			method3 : return and  argument 
+	solve problem 
+check overriding or not 
+
+
+
+import java.util.Scanner;
+class A{
+    A show(){
+        System.out.println("Class A method");
+        return this;
+    }
+}
+class B extends A{
+    void show(int a){
+        super.show();
+        System.out.println("Class B method " + a);
+    }
+}
+class C extends B{
+    C show(int a){
+        System.out.println("Class B method " + a);
+        return this;
+    }
+}
+
+public class Main{
+    public static void main(String args[]){
+        Scanner sc= new Scanner(System.in);
+        C obC= new C();
+        System.out.print("argument for class C: ");
+        obC.show(sc.nextInt());
+    }
+}
+
+
+Output:
+java: show(int) in C cannot override show(int) in B
+  return type C is not compatible with void
+
+
+
+import java.util.Scanner;
+class A{
+    A show(){
+        System.out.println("Class A method");
+        return this;
+    }
+}
+class B extends A{
+    B show(int a){
+        super.show();
+        System.out.println("Class B method " + a);
+        return this;
+    }
+}
+class C extends B{
+    C show(int a){
+        Scanner sc= new Scanner(System.in);
+        System.out.print("argument for class B: ");
+        super.show(sc.nextInt());
+        System.out.println("Class B method " + a);
+        return this;
+    }
+}
+
+public class Main{
+    public static void main(String args[]){
+        Scanner sc= new Scanner(System.in);
+        C obC= new C();
+        System.out.print("argument for class C: ");
+        obC.show(sc.nextInt());
+    }
+}
+
+
+Output:
+argument for class C: 30
+argument for class B: 20
+Class A method
+Class B method 20
+Class B method 30
+
+
+heirarichal inheritance :method overriding : covariant return type  
+			method1 : return and no argument 
+			method2 :no return and  argument 
+			method3 : covariant return type 
+check overriding or not 
+
+	solve problem 
+
+
+
+import java.util.Scanner;
+class A{
+     int show(){
+        System.out.println("Class A method");
+        return 0;
+    }
+}
+class B extends A{
+    void show(int a){        
+	System.out.println("Class B method " + a);
+    }
+}
+class C extends A{
+    C show(){
+        System.out.println("Class B method ");
+        return this;
+    }
+}
+
+public class Main{
+    public static void main(String args[]){
+        Scanner sc= new Scanner(System.in);
+        B obB= new B();
+        obB.show(sc.nextInt());
+        C obC= new C();
+        obC.show();
+    }
+}
+
+
+Output:
+java: show() in C cannot override show() in A
+  return type C is not compatible with int
+
+
+
+//PROBLEM SOLUTION
+import java.util.Scanner;
+class A{
+     int show(){
+        System.out.println("Class A method");
+        return 0;
+    }
+}
+class B extends A{
+    void show(int a){
+        super.show();
+        System.out.println("Class B method " + a);
+    }
+}
+class C extends A{
+    int show(){
+        super.show();
+        System.out.println("Class C method ");
+        return 0;
+    }
+}
+
+public class Main{
+    public static void main(String args[]){
+        Scanner sc= new Scanner(System.in);
+        B obB= new B();
+        System.out.print("argument for class B: ");
+        obB.show(sc.nextInt());
+        C obC= new C();
+        obC.show();
+    }
+}
+
+
+Output:
+argument for class B: 20
+Class A method
+Class B method 20
+Class A method
+Class C method 
+
+-------------------------------------------------------------------
+user input 
+
+single level inheritance :method overriding : 
+	super method used 
+
+
+import java.util.Scanner;
+class A{
+    int show(int a){
+        System.out.println("Class A method " + a);
+        return 0;
+
+    }
+}
+class B extends A{
+    int show(int a){
+        Scanner sc= new Scanner(System.in);
+        System.out.print("argument for class A: ");
+        super.show(sc.nextInt());
+        System.out.println("Class B method " + a);
+        return 0;
+    }
+}
+
+public class Main{
+    public static void main(String args[]){
+        Scanner sc= new Scanner(System.in);
+        B obB= new B();
+        System.out.print("argument for class B: ");
+        obB.show(sc.nextInt());
+    }
+}
+
+
+Output:
+argument for class B: 20
+argument for class A: 10
+Class A method 10
+Class B method 20
+
+------------------------------------------------------------------------
+
+multilevel inheritance :method overriding :covariant return type 
+	super method used 
+
+
+import java.util.Scanner;
+class A{
+    A show(int a){
+        System.out.println("Class A method " + a);
+        return this;
+
+    }
+}
+class B extends A{
+    B show(int a){
+        Scanner sc= new Scanner(System.in);
+        System.out.print("argument for class A: ");
+        super.show(sc.nextInt());
+        System.out.println("Class B method " + a);
+        return this;
+    }
+}
+class C extends B{
+    C show(int a){
+        Scanner sc= new Scanner(System.in);
+        System.out.print("argument for class B: ");
+        super.show(sc.nextInt());
+        System.out.println("Class C method " + a);
+        return this;
+    }
+}
+
+public class Main{
+    public static void main(String args[]){
+        Scanner sc= new Scanner(System.in);
+        C obC= new C();
+        System.out.print("argument for class C: ");
+        obC.show(sc.nextInt());
+    }
+}
+
+
+Output:
+argument for class C: 30
+argument for class B: 20
+argument for class A: 10
+Class A method 10
+Class B method 20
+Class C method 30
+
+------------------------------------------------------------------------
+
+heirarichal inheritance :method overriding : covariant return type  
+	super method used 
+
+
+import java.util.Scanner;
+class A{
+    A show(int a){
+        System.out.println("Class A method " + a);
+        return this;
+
+    }
+}
+class B extends A{
+    B show(int a){
+        Scanner sc= new Scanner(System.in);
+        System.out.print("argument for class A: ");
+        super.show(sc.nextInt());
+        System.out.println("Class B method " + a);
+        return this;
+    }
+}
+class C extends A{
+    C show(int a){
+        Scanner sc= new Scanner(System.in);
+        System.out.print("argument for class A: ");
+        super.show(sc.nextInt());
+        System.out.println("Class C method " + a);
+        return this;
+    }
+}
+
+public class Main{
+    public static void main(String args[]){
+        Scanner sc= new Scanner(System.in);
+        B obB= new B();
+        System.out.print("argument for class B: ");
+        obB.show(sc.nextInt());
+        C obC= new C();
+        System.out.print("argument for class C: ");
+        obC.show(sc.nextInt());
+    }
+}
+
+
+Output:
+argument for class B: 20
+argument for class A: 10
+Class A method 10
+Class B method 20
+argument for class C: 30
+argument for class A: 10
+Class A method 10
+Class C method 30
+
+-------------------------------------------------------------------
+
+what is difference between method overloading and overriding
