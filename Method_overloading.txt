@@ -1,0 +1,177 @@
+single level inheritance :method overloading 
+			problem solve 
+
+
+
+class A {
+    void show() {
+        System.out.println("Class A ");
+    }
+    void show(){
+        System.out.println("Class A method 2");
+    }
+    int show (){
+        System.out.println("Class A method 3");
+    }
+    void show(){
+        System.out.println("Class A method 4");
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        A obj= new A();
+        obj.show();
+    }
+}
+
+
+Output:
+java: method show() is already defined in class A
+
+
+class A {
+    void show() {
+        System.out.println("Class A ");
+    }
+    void show(int a){
+        System.out.println("Class A method " + a);
+    }
+    void show (float a){
+        System.out.println("Class A method " + a);
+    }
+    void show(int a, int b){
+        System.out.println("Class A method " + a + " " + b);
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        A obj= new A();
+        obj.show();
+        obj.show(2);
+        obj.show(3.0f);
+        obj.show(4, 5);
+    }
+}
+
+
+Output:
+Class A 
+Class A method 2
+Class A method 3.0
+Class A method 4 5
+
+
+
+
+multilevel inheritance :method overloading
+			problem solve 
+ 
+heririchal inheritance :method overloading 
+			problem solve 
+
+-----------------------------------------
+class A
+	constructor overload 
+
+class Main 
+main method :
+
+
+
+class A {
+    A(){
+        System.out.println("A constructor");
+    }
+    A(){
+        System.out.println("A class constructor");
+    }
+    A(){
+        System.out.println("A class constructor 3");
+    }
+    A(){
+        System.out.println("A class constructor 4");
+    }
+
+}
+public class Main{
+    public static void main(String args[]){
+        new A();
+    }
+}
+
+
+
+Output:
+ERROR(java: constructor A() is already defined in class A)
+
+-----------------------------------------
+class A
+	constructor overload :problem sovle 
+
+class Main 
+main method :
+
+
+class A {
+    A(){
+        System.out.println("A constructor");
+    }
+    A(int a){
+        System.out.println("A class constructor " + a);
+    }
+    A(float a){
+        System.out.println("A class constructor " + a);
+    }
+    A(int a, int b){
+        System.out.println("A class constructor " + a + " " + b);
+    }
+
+}
+public class Main{
+    public static void main(String args[]){
+        new A();
+        new A(2);
+        new A(3.5f);
+        new A(4, 5);
+    }
+}
+
+
+Output:
+A constructor
+A class constructor 2
+A class constructor 3.5
+A class constructor 4 5
+
+-----------------------------------------
+
+class A
+	constructor overload :number of parameter same and data type of parameter different 
+
+class Main 
+main method :
+
+
+
+class A {
+    A(int a){
+        System.out.println("A class constructor " + a);
+    }
+    A(float a){
+        System.out.println("A class constructor " + a);
+    }
+
+}
+public class Main{
+    public static void main(String args[]){
+        new A(2);
+        new A(3.5f);
+    }
+}
+
+
+Output:
+A class constructor 2
+A class constructor 3.5
+
+-----------------------------------------
