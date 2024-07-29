@@ -1,0 +1,181 @@
+class A {
+    A(int a){
+        this(2, 4);
+        System.out.println("1 constructor " + a);
+    }
+
+    A(int a, int b){
+        this(4.5f);
+        System.out.println("2 constructor " + a + " " + b);
+    }
+    A(float a){
+        this(2.1f, 5.6f);
+        System.out.println("3 constructor " + a);
+    }
+    A(float a, float b){
+        this();
+        System.out.println("4 constructor " + a + " " + b);
+    }
+    A(){
+        System.out.println("5 constructor");
+    }
+
+}
+public class Main{
+    public static void main(String args[]){
+        new A(2);
+    }
+}
+
+-------------------------------------------------------------------------------------------
+
+class A {
+    A(int a){
+        this(2.4f);
+        System.out.println("1 constructor " + a);
+    }
+
+    A(int a, int b){
+        System.out.println("2 constructor " + a + " " + b);
+    }
+    A(float a){
+        this(2.1f, 5.6f);
+        System.out.println("3 constructor " + a);
+    }
+    A(float a, float b){
+        this();
+        System.out.println("4 constructor " + a + " " + b);
+    }
+    A(){
+        this(2, 4);
+        System.out.println("5 constructor");
+    }
+
+}
+public class Main{
+    public static void main(String args[]){
+        
+        new A(2);
+    }
+}
+
+
+Output:
+2 constructor 2 4
+5 constructor
+4 constructor 2.1 5.6
+3 constructor 2.4
+1 constructor 2
+
+-------------------------------------------------------------------------------------------
+
+class A{
+    A(){
+        System.out.println("A class constructor");
+    }
+    A(int a){
+        this(2.5f);
+        System.out.println("A class constructor " + a);
+    }
+    A(float a){
+        this(2.5f, 5.2f);
+        System.out.println("A class constructor " + a);
+    }
+    A(int a, int b){
+        this(2);
+        System.out.println("A class constructor " + a + " " + b);
+    }
+    A(float a, float b){
+        this();
+        System.out.println("A class constructor " + a + " " + b);
+    }
+
+}
+
+Output:
+A class constructor
+A class constructor 2.5 5.2
+A class constructor 2.5
+A class constructor 2
+A class constructor 2 4
+
+-------------------------------------------------------------------------------------------
+
+class A{
+    A(){
+        System.out.println("A class constructor");
+    }
+    A(int a){
+        this(2,4);
+        System.out.println("A class constructor " + a);
+    }
+    A(float a){
+        this(10);
+        System.out.println("A class constructor " + a);
+    }
+    A(int a, int b){
+        this(2.3f, 6.7f);
+        System.out.println("A class constructor " + a + " " + b);
+    }
+    A(float a, float b){
+        this(2, 3, 4);
+        System.out.println("A class constructor " + a + " " + b);
+    }
+
+    A(int a, int b, int c){
+        this();
+        System.out.println("A class constructor " + a + " " + b + " " + c);
+    }
+
+}
+public class Main{
+    public static void main(String args[]){
+        new A(7.8f);
+    }
+}
+
+
+Output:
+A class constructor
+A class constructor 2 3 4
+A class constructor 2.3 6.7
+A class constructor 2 4
+A class constructor 10
+A class constructor 7.8
+
+-------------------------------------------------------------------------------------------
+
+class A{
+    A(){
+        System.out.println("A class constructor");
+    }
+    A(int a){
+        this();
+        System.out.println("A class constructor " + a);
+    }
+    A(float a){
+        this(10,20);
+        System.out.println("A class constructor " + a);
+    }
+    A(int a, int b){
+        this(2.3f, 6.7f);
+        System.out.println("A class constructor " + a + " " + b);
+    }
+    A(float a, float b){
+        System.out.println("A class constructor " + a + " " + b);
+    }
+
+}
+public class Main{
+    public static void main(String args[]){
+        new A(2);
+        new A(1.9f);
+    }
+}
+
+Output:
+A class constructor
+A class constructor 2
+A class constructor 2.3 6.7
+A class constructor 10 20
+A class constructor 1.9
