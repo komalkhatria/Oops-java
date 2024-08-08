@@ -1,0 +1,371 @@
+interface A 
+	method : no return and no argument 
+	method : no return and  argument 
+	method :  return and no argument 
+	method :  return and  argument 
+
+class B -->access interface 
+
+class Main :make object 
+
+
+
+interface A{
+    void show1();
+    void show2(int n);
+    int show3();
+    int show4(int n);
+}
+class B implements A{
+    public void show1(){
+        System.out.println("Show method");
+    }
+    public void show2(int n){
+        System.out.println("Show method " + n);
+    }
+    public int show3(){
+        System.out.println("Show method 3");
+        return 0;
+    }
+    public int show4(int n){
+        System.out.println("Show method " + n);
+        return 0;
+    }
+}
+public class Main{
+    public static void main(String[] args){
+       B obj= new B();
+       obj.show1();
+       obj.show2(2);
+       obj.show3();
+       obj.show4(4);
+    }
+}
+
+
+
+Output:
+Show method
+Show method 2
+Show method 3
+Show method 4
+
+---------------------------------------------------------------------
+interface A 
+	method : no return and no argument 
+
+interface B
+	method : no return and  argument 
+
+interface C
+	method :  return and no argument 
+
+interface D 
+	method :  return and  argument 
+
+class E -->access interface 
+
+class Main :make object 
+
+
+
+
+interface A{
+    void show1();
+}
+interface B{
+    void show2(int n);
+}
+interface C{
+    int show3();
+}
+interface D{
+    int show4(int n);
+}
+class E implements A, B, C, D{
+    public void show1(){
+        System.out.println("Show method");
+    }
+    public void show2(int n){
+        System.out.println("Show method " + n);
+    }
+    public int show3(){
+        System.out.println("Show method 3");
+        return 0;
+    }
+    public int show4(int n){
+        System.out.println("Show method " + n);
+        return 0;
+    }
+}
+public class Main{
+    public static void main(String[] args){
+       E obj= new E();
+       obj.show1();
+       obj.show2(2);
+       obj.show3();
+       obj.show4(4);
+    }
+}
+
+
+
+Output:
+Show method
+Show method 2
+Show method 3
+Show method 4
+
+------------------------------------------------------
+
+through extends 
+
+interface A 
+	method : no return and no argument 
+
+interface B
+	method : no return and  argument 
+
+interface C
+	method :  return and no argument 
+
+interface D 
+	method :  return and  argument 
+
+class E -->access interface 
+
+class Main :make object 
+
+
+
+
+interface A{
+    void show1();
+}
+interface B extends A{
+    void show2(int n);
+}
+interface C extends B{
+    int show3();
+}
+interface D extends C{
+    int show4(int n);
+}
+class E implements D{
+    public void show1(){
+        System.out.println("Show method");
+    }
+    public void show2(int n){
+        System.out.println("Show method " + n);
+    }
+    public int show3(){
+        System.out.println("Show method 3");
+        return 0;
+    }
+    public int show4(int n){
+        System.out.println("Show method " + n);
+        return 0;
+    }
+}
+public class Main{
+    public static void main(String[] args){
+       E obj= new E();
+       obj.show1();
+       obj.show2(2);
+       obj.show3();
+       obj.show4(4);
+    }
+}
+
+
+
+Output:
+Show method
+Show method 2
+Show method 3
+Show method 4
+
+------------------------------------------------------
+
+interface A 
+	method : no return and no argument 
+		interface B
+			method : no return and  argument 
+		interface C
+			method :  return and no argument 
+
+		interface D 
+			method :  return and  argument 
+
+
+class E -->access interface 
+
+class Main :make object 
+
+
+
+
+interface A{
+    void show1();
+    interface B {
+        void show2(int n);
+    }
+    interface C{
+        int show3();
+    }
+    interface D{
+        int show4(int n);
+    }
+}
+
+class E implements A{
+    public void show1(){
+        System.out.println("Show method");
+    }
+    public void show2(int n){
+        System.out.println("Show method " + n);
+    }
+    public int show3(){
+        System.out.println("Show method 3");
+        return 0;
+    }
+    public int show4(int n){
+        System.out.println("Show method " + n);
+        return 0;
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        E obj= new E();
+        obj.show1();
+        obj.show2(2);
+        obj.show3();
+        obj.show4(4);
+    }
+}
+
+
+Output:
+Show method
+Show method 2
+Show method 3
+Show method 4
+
+------------------------------------------------------
+
+interface A 
+	method : no return and no argument 
+		interface B
+			method : no return and  argument 
+			interface C
+			  method :  return and no argument 
+					interface D 
+			      		method :  return and  argument 
+		
+
+
+class E -->access interface 
+
+class Main :make object 
+
+
+
+interface A{
+    void show1();
+    interface B{
+        void show2(int n);
+        interface C{
+            int show3();
+            interface D{
+                int show4(int n);
+            }
+        }
+    }
+}
+
+class E implements A{
+    public void show1(){
+        System.out.println("Show method");
+    }
+    public void show2(int n){
+        System.out.println("Show method " + n);
+    }
+    public int show3(){
+        System.out.println("Show method 3");
+        return 0;
+    }
+    public int show4(int n){
+        System.out.println("Show method " + n);
+        return 0;
+    }
+}
+public class Main{
+    public static void main(String[] args){
+       E obj= new E();
+       obj.show1();
+       obj.show2(2);
+       obj.show3();
+       obj.show4(4);
+    }
+}
+
+
+Output:
+Show method
+Show method 2
+Show method 3
+Show method 4
+
+
+
+------------------------------------------------------
+
+interface A{
+    void show1();
+    interface B {
+        void show2(int n);
+    }
+    interface C{
+        int show3();
+    }
+    interface D{
+        int show4(int n);
+    }
+}
+
+interface A{
+    void show1();
+    interface B {
+        void show2(int n);
+    }
+    interface C{
+        int show3();
+    }
+    interface D{
+        int show4(int n);
+    }
+}
+
+
+//CALLING ONLY B and C INTERFACE
+class E implements A.B, A.C{
+    public void show2(int n){
+        System.out.println("Show method " + n);
+    }
+    public int show3(){
+        System.out.println("Show method 3");
+        return 0;
+    }
+}
+public class Main{
+    public static void main(String[] args){
+       E obj= new E();
+       obj.show2(2);
+       obj.show3();
+    }
+}
+
+
+Output:
+Show method 2
+Show method 3
