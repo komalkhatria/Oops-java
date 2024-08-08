@@ -1,0 +1,1107 @@
+overhiding :
+single level 
+
+class A{
+    static void show(){
+        System.out.println("Class A method");
+    }
+}
+class B extends A{
+    static void show(){
+        System.out.println("Class B method");
+    }
+}
+
+public class Main{
+    public static void main(String[] args){
+        B obj= new B();
+        obj.show();
+    }
+}
+
+Output:
+Class B method
+
+---------------------------------------------------
+
+multilevel 
+
+
+class A{
+    static void show(){
+        System.out.println("Class A method");
+    }
+}
+class B extends A{
+    static void show(){
+        System.out.println("Class B method");
+    }
+}
+class C extends B{
+    static void show(){
+        System.out.println("Class C method");
+    }
+}
+
+public class Main{
+    public static void main(String[] args){
+        C obj= new C();
+        obj.show();
+    }
+}
+
+
+Output:
+Class C method
+
+---------------------------------------------------
+
+heriraichal 
+
+
+class A{
+    static void show(){
+        System.out.println("Class A method");
+    }
+}
+class B extends A{
+    static void show(){
+        System.out.println("Class B method");
+    }
+}
+class C extends A{
+    static void show(){
+        System.out.println("Class C method");
+    }
+}
+
+public class Main{
+    public static void main(String[] args){
+        B obB= new B();
+        obB.show();
+        C obC= new C();
+        obC.show();
+    }
+}
+
+
+Output:
+Class B method
+Class C method
+
+---------------------------------------------------
+
+class company 
+
+instance variable 
+empname
+eid
+efname
+econtact
+eaddress 
+ealternate_number 
+salary 
+edepartment 
+bankaccountnumber
+post 
+
+class Employe 
+instance variable 
+empname
+eid
+efname
+econtact
+eaddress 
+ealternate_number 
+salary 
+edepartment 
+bankaccountnumber
+post 
+
+super third use se krogey 
+
+
+
+class Company{
+    String eName="Hritik", eFname= "Prashant", eAddress="Chandni Chowk, Delhi", eDepartment= "Accounts", ePost="Manager";
+    int eId= 110, salary= 80000;
+    long eContact= 9876543210L, eAlternateContact= 9878676544L, acNo= 9008007000L;
+
+}
+
+class Employee extends Company{
+    String eName, eFname, eAddress, eDepartment, ePost;
+    int eId, salary;
+    long eContact, eAlternateContact, acNo;
+
+    void setDetails(String eName, int eId, String eFname, long eContact, String eAddress, long eAlternateContact, int salary, String eDepartment, long acNo, String ePost){
+        this.eName= eName;
+        this.eId= eId;
+        this.eFname= eFname;
+        this.eContact= eContact;
+        this.eAddress= eAddress;
+        this.eAlternateContact= eAlternateContact;
+        this.salary= salary;
+        this.eDepartment= eDepartment;
+        this.acNo= acNo;
+        this.ePost= ePost;
+    }
+    void show(){
+        System.out.println("Name: " + super.eName + " " + eName);
+        System.out.println("Id: " + super.eId+ " " + eId);
+        System.out.println("Father's name: " + super.eFname + " " + eFname);
+        System.out.println("Contact: " + super.eContact + " " + eContact);
+        System.out.println("Address: " + super.eAddress+ " " + eAddress);
+        System.out.println("Alternate contact: " + super.eAlternateContact + " " + eAlternateContact);
+        System.out.println("Salary: " + super.salary + " " + salary);
+        System.out.println("Department: " + super.eDepartment+ " " + eDepartment);
+        System.out.println("Bank account number: " + super.acNo + " " + acNo);
+        System.out.println("Post: " + super.ePost + " " + ePost);
+    }
+
+}
+
+public class Main{
+    public static void main(String[] args){
+        Employee obj= new Employee();
+        obj.setDetails("Shrey", 58, "Anurag", 9876543210L, "Udaipur, Rajasthan" , 9008007006L, 50000, "Sales", 9000008888L, "Team Lead");
+        obj.show();
+
+    }
+}
+
+
+
+Output:
+Name: Hritik Shrey
+Id: 110 58
+Father's name: Prashant Anurag
+Contact: 9876543210 9876543210
+Address: Chandni Chowk, Delhi Udaipur, Rajasthan
+Alternate contact: 9878676544 9008007006
+Salary: 80000 50000
+Department: Accounts Sales
+Bank account number: 9008007000 9000008888
+Post: Manager Team Lead
+
+----------------------------------------------------
+
+super third use :
+
+class College 
+name
+fname
+nmame
+class
+address
+contact 
+roll_no 
+gender 
+marks 
+
+class Studnet 
+name
+fname
+nmame
+class
+address
+contact 
+roll_no 
+gender 
+marks 
+
+
+
+
+class College{
+    String name="Hritik", fname= "Prashant", mname= "Tanuja" ,address="Chandni Chowk, Delhi";
+    int standard= 11, roll_no= 27, marks=90;
+    long contact= 9876543210L;
+    char gender= 'M';
+
+}
+
+class Student extends College{
+    String name, fname, mname ,address;
+    int standard, roll_no, marks;
+    long contact;
+    char gender;
+
+    void setDetails(String name, String fname, String mname, int standard, String address, long contact, int roll_no, char gender, int marks){
+        this.name= name;
+        this.fname= fname;
+        this.mname= mname;
+        this.standard= standard;
+        this.address= address;
+        this.contact= contact;
+        this.roll_no= roll_no;
+        this.gender= gender;
+        this.marks= marks;
+    }
+    void show(){
+        System.out.println("Former details are of parent class, latter belong to child class: ");
+        System.out.println("Name: " + super.name + " " + name);
+        System.out.println("Father's name: " + super.fname + " " + fname);
+        System.out.println("Mother's name: " + super.mname + " " + mname);
+        System.out.println("Contact: " + super.standard + " " + standard);
+        System.out.println("Address: " + super.address+ " " + address);
+        System.out.println("Contact: " + super.contact + " " + contact);
+        System.out.println("Roll no: " + super.roll_no + " " + roll_no);
+        System.out.println("Gender: " + super.gender + " " + gender);
+        System.out.println("Marks: " + super.marks + " " + marks);
+    }
+
+}
+
+public class Main{
+    public static void main(String[] args){
+        Student s= new Student();
+        s.setDetails("Kajal", "Arjun", "Shalini", 10, "Lajpat Nagar, Delhi", 9876543210L, 34, 'F', 80);
+        s.show();
+    }
+}
+
+
+
+Output:
+Former details are of parent class, latter belong to child class: 
+Name: Hritik Kajal
+Father's name: Prashant Arjun
+Mother's name: Tanuja Shalini
+Contact: 11 10
+Address: Chandni Chowk, Delhi Lajpat Nagar, Delhi
+Contact: 9876543210 9876543210
+Roll no: 27 34
+Gender: M F
+Marks: 90 80
+
+----------------------------------------------------
+
+class College :abstract 
+	abstract methods : 
+	course()
+	department()
+	details()
+
+class People ex College 
+
+class Main access
+
+
+
+abstract class College{
+    abstract void course();
+    abstract void department();
+    abstract void details();
+}
+class People extends College{
+    void course(){
+        System.out.println("Full Stack Development");
+    }
+    void department(){
+        System.out.println("Java");
+    }
+    void details(){
+        System.out.println("This is a java full stack development course.");
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        People obj= new People();
+        obj.course();
+        obj.department();
+        obj.details();
+    }
+}
+
+
+Output:
+Full Stack Development
+Java
+This is a java full stack development course.
+
+----------------------------------------------------
+
+class Mahindra :abstract method 
+	tyre 
+	break1
+	mirror
+	horn 
+	gate
+
+class Car ex Mahindra 
+
+
+class Main :access 
+
+
+
+abstract class Mahindra{
+    abstract void tyre();
+    abstract void break1();
+    abstract void mirror();
+    abstract void horn();
+    abstract void gate();
+}
+class Car extends Mahindra{
+    void tyre(){
+        System.out.println("4.5 star tyre");
+    }
+    void break1(){
+        System.out.println("4.8 star break");
+    }
+    void mirror(){
+        System.out.println("4 star mirror");
+    }
+    void horn(){
+        System.out.println("4.2 star horn");
+    }
+    void gate(){
+        System.out.println("4.5 star gate");
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        Car obj= new Car();
+        obj.tyre();
+        obj.break1();
+        obj.mirror();
+        obj.horn();
+        obj.gate();
+    }
+}
+
+
+Output:
+4.5 star tyre
+4.8 star break
+4 star mirror
+4.2 star horn
+4.5 star gate
+----------------------------------------------------
+
+class Company 
+	abstract methods : 
+	workprofiler()
+	department()
+	details()
+
+class Employee ex Company 
+
+
+class Manager ex company 
+
+
+class Main class :access
+
+
+abstract class Company{
+    abstract void workprofile();
+    abstract void department();
+    abstract void details();
+}
+
+class Employee extends Company{
+    void workprofile(){
+        System.out.println("Engineer");
+    }
+    void department(){
+        System.out.println("Technical");
+    }
+    void details(){
+        System.out.println("A software company");
+    }
+}
+class Manager extends Company{
+    void workprofile(){
+        System.out.println("Developer");
+    }
+    void department(){
+        System.out.println("Tech");
+    }
+    void details(){
+        System.out.println("A software development company");
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        Employee emp= new Employee();
+        emp.workprofile();
+        emp.department();
+        emp.details();
+        Manager mgr= new Manager();
+        mgr.workprofile();
+        mgr.department();
+        mgr.details();
+    }
+}
+
+
+Output:
+Engineer
+Technical
+A software company
+Developer
+Tech
+A software development company
+  
+----------------------------------------------------
+
+class Mall 
+	shop
+	bar
+	cafe
+	restaurant
+	games 
+
+class Person ex Mall
+
+class Child ex Person
+
+class SeniorCitizen ex Child 
+
+class Main :main method access	
+
+
+
+
+abstract class Mall{
+    abstract void shop();
+    abstract void bar();
+    abstract void cafe();
+    abstract void restaurant();
+    abstract void games();
+}
+
+class Person extends Mall{
+    void shop(){
+        System.out.println("Shop");
+    }
+    void bar(){
+        System.out.println("Bar");
+    }
+    void cafe(){
+        System.out.println("Cafe");
+    }
+    void restaurant(){
+        System.out.println("Restaurant");
+    }
+    void games(){
+        System.out.println("Games");
+    }
+    void person(){
+        System.out.println("Person class");
+    }
+}
+class Child extends Person{
+    void child(){
+        System.out.println("Child class");
+    }
+}
+class SeniorCitizen extends Child{
+    void senior(){
+        System.out.println("SeniorCitizen class");
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        SeniorCitizen obj= new SeniorCitizen();
+        obj.shop();
+        obj.bar();
+        obj.cafe();
+        obj.restaurant();
+        obj.games();
+        obj.person();
+        obj.child();
+        obj.senior();
+    }
+}
+
+
+
+Output:
+Shop
+Bar
+Cafe
+Restaurant
+Games
+Person class
+Child class
+SeniorCitizen class
+
+--------------------------------------------
+------------------------------------------------------
+class College :abstract 
+	abstract methods : 
+	course()
+	department() non abstract 
+	details() non abstract 
+
+
+class People ex College 
+
+class Main access
+
+
+abstract class College{
+    abstract void course();
+    void department(){
+        System.out.println("Departments: Science, Commerce, Arts");
+    }
+    void details(){
+        System.out.println("Affiliated to University of Rajasthan");
+    }
+}
+class People extends College{
+    void course(){
+        System.out.println("Courses: B.SC, B.COM, BCA, BBA");
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        People obj= new People();
+        obj.course();
+        obj.department();
+        obj.details();
+    }
+}
+
+
+Output:
+Courses: B.SC, B.COM, BCA, BBA
+Departments: Science, Commerce, Arts
+Affiliated to University of Rajasthan
+
+----------------------------------------------------
+
+class Mahindra :abstract method 
+	tyre 
+	break1
+	mirror nonabstract 
+	horn non abstract 
+	gate non abstract 
+
+class Car ex Mahindra 
+
+
+class Main :access 
+
+
+abstract class Mahindra{
+    abstract void tyre();
+    abstract void break1();
+    void mirror(){
+        System.out.println("4 star mirror");
+    }
+    void horn(){
+        System.out.println("4.2 star horn");
+    }
+    void gate(){
+        System.out.println("4.5 star gate");
+    }
+}
+class Car extends Mahindra{
+    void tyre(){
+        System.out.println("4.5 star tyre");
+    }
+    void break1(){
+        System.out.println("4.8 star break");
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        Car obj= new Car();
+        obj.tyre();
+        obj.break1();
+        obj.mirror();
+        obj.horn();
+        obj.gate();
+    }
+}
+
+
+Output:
+4.5 star tyre
+4.8 star break
+4 star mirror
+4.2 star horn
+4.5 star gate
+
+----------------------------------------------------
+
+class Company 
+	abstract methods : 
+	workprofiler() non abstract 
+	department()
+	details()
+
+class Employee ex Company 
+
+
+class Manager ex company 
+
+
+class Main class :access  
+
+
+
+abstract class Company{
+    void workprofile(){
+        System.out.println("Engineer");
+    }
+    abstract void department();
+    abstract void details();
+}
+
+class Employee extends Company{
+    void department(){
+        System.out.println("Technical");
+    }
+    void details(){
+        System.out.println("A software company");
+    }
+}
+class Manager extends Company{
+    void department(){
+        System.out.println("Tech");
+    }
+    void details(){
+        System.out.println("A software development company");
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        Employee emp= new Employee();
+        emp.workprofile();
+        emp.department();
+        emp.details();
+        Manager mgr= new Manager();
+        mgr.workprofile();
+        mgr.department();
+        mgr.details();
+    }
+}
+
+
+Output:
+Engineer
+Technical
+A software company
+Engineer
+Tech
+A software development company
+
+----------------------------------------------------
+
+class Mall 
+	shop
+	bar
+	cafe non abstract 
+	restaurant non abstract 
+	games 
+
+class Person ex Mall
+
+class Child ex Person
+
+class SeniorCitizen ex Child 
+
+class Main :main method access	
+
+
+abstract class Mall{
+    abstract void shop();
+    abstract void bar();
+    void cafe(){
+        System.out.println("Cafe");
+    }
+    void restaurant(){
+        System.out.println("Restaurant");
+    }
+    abstract void games();
+}
+
+class Person extends Mall{
+    void shop(){
+        System.out.println("Shop");
+    }
+    void bar(){
+        System.out.println("Bar");
+    }
+    void games(){
+        System.out.println("Games");
+    }
+    void person(){
+        System.out.println("Person class");
+    }
+}
+class Child extends Person{
+    void child(){
+        System.out.println("Child class");
+    }
+}
+class SeniorCitizen extends Child{
+    void senior(){
+        System.out.println("SeniorCitizen class");
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        SeniorCitizen obj= new SeniorCitizen();
+        obj.shop();
+        obj.bar();
+        obj.cafe();
+        obj.restaurant();
+        obj.games();
+        obj.person();
+        obj.child();
+        obj.senior();
+    }
+}
+
+
+Output:
+Shop
+Bar
+Cafe
+Restaurant
+Games
+Person class
+Child class
+SeniorCitizen class
+
+----------------------------------------------------
+
+class Mall 
+	shop
+	bar
+	cafe non abstract 
+	restaurant non abstract 
+	games 
+
+class Person ex Mall
+adharcard() 
+	detail :name 
+
+class Child ex Person
+pan chard() :details 
+
+class SeniorCitizen ex Child 
+rashancard()
+
+class Main :main method access	
+
+
+
+abstract class Mall{
+    abstract void shop();
+    abstract void bar();
+    void cafe(){
+        System.out.println("Cafe");
+    }
+    void restaurant(){
+        System.out.println("Restaurant");
+    }
+    abstract void games();
+}
+
+class Person extends Mall{
+    void shop(){
+        System.out.println("Shop");
+    }
+    void bar(){
+        System.out.println("Bar");
+    }
+    void games(){
+        System.out.println("Games");
+    }
+    void aadharCard(){
+        System.out.println("Aadhar Card");
+    }
+}
+class Child extends Person{
+    void panCard(){
+        System.out.println("Pan Card");
+    }
+}
+class SeniorCitizen extends Child{
+    void rashanCard(){
+        System.out.println("Rashan Card");
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        SeniorCitizen obj= new SeniorCitizen();
+        obj.shop();
+        obj.bar();
+        obj.cafe();
+        obj.restaurant();
+        obj.games();
+        obj.aadharCard();
+        obj.panCard();
+        obj.rashanCard();
+    }
+}
+
+
+Output:
+Shop
+Bar
+Cafe
+Restaurant
+Games
+Aadhar Card
+Pan Card
+Rashan Card
+
+----------------------------------------------------
+
+class A :abstract 
+	method :no return and no argument 
+
+class B :ex A 
+
+class Main main :access 
+
+
+abstract class A{
+    abstract void show();
+}
+class B extends A{
+    void show(){
+        System.out.println("Java is fun");
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        B obj= new B();
+        obj.show();
+    }
+}
+
+
+Output:
+Java is fun
+----------------------------------------------------
+
+class A :abstract 
+	method :no return and  argument 
+
+class B :ex A 
+
+class Main main :access 
+
+
+abstract class A{
+    abstract void show(String expression);
+}
+class B extends A{
+    void show(String expression){
+        System.out.println("Java is fun " + expression + "!");
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        B obj= new B();
+        obj.show("indeed");
+    }
+}
+
+
+Output:
+Java is fun indeed!
+
+----------------------------------------------------
+
+class A :abstract 
+	method : return and no argument 
+
+class B :ex A 
+class Main main :access 
+
+
+abstract class A{
+    abstract int show();
+}
+class B extends A{
+    int show(){
+        System.out.println("Java is fun");
+        return 0;
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        B obj= new B();
+        obj.show();
+    }
+}
+
+Output:
+Java is fun
+
+----------------------------------------------------
+
+class A :abstract 
+	method : return and  argument 
+
+class B :ex A 
+
+class Main main :access 
+
+
+abstract class A{
+    abstract String show(String expression);
+}
+class B extends A{
+    String show(String expression){
+        System.out.println("Java is fun");
+        return expression;
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        B obj= new B();
+        System.out.println(obj.show("Indeed!"));
+    }
+}
+
+
+Output:
+Java is fun
+Indeed!
+
+----------------------------------------------------
+
+class A :abstract 
+	method :covariant return type 
+
+class B :ex A 
+
+class Main main :access 
+
+abstract class A{
+    abstract A show();
+}
+class B extends A{
+    A show(){
+        System.out.println("Java is fun");
+        return this;
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        B obj= new B();
+        obj.show();
+    }
+}
+
+Output:
+Java is fun
+
+----------------------------------------------------
+
+class A :abstract 
+		method overloading 
+
+class B :ex A 
+
+class Main main :access 
+
+
+
+abstract class A{
+    abstract void show();
+    abstract void show(String expression);
+}
+class B extends A{
+    void show(){
+        System.out.println("Java is fun");
+    }
+    void show(String expression){
+        System.out.println("Java is fun " + expression);
+    }
+
+}
+public class Main{
+    public static void main(String[] args){
+        B obj= new B();
+        obj.show();
+        obj.show("indeed!");
+    }
+}
+
+
+Output:
+Java is fun
+Java is fun indeed!
+
+----------------------------------------------------
+
+class A :abstract 
+		method overriding :non abstract overrding possible?
+
+class B :ex A 
+class Main main :access 
+
+
+
+abstract class A{
+    abstract void show();
+    void display(){
+        System.out.println("Class A");
+    }
+
+}
+class B extends A{
+    void show(){
+        System.out.println("Java is fun");
+    }
+    void display(){
+        System.out.println("Class B");
+    }
+
+}
+
+
+Output:
+Java is fun
+Class B
+
+----------------------------------------------------
+
+class A :abstract 
+		method overrding :non abstract overrding possible  
+
+class B :ex A 
+class Main main :access 
+
+
+
+
+//PROBLEM SOLUTION
+
+abstract class A{
+    abstract void show();
+    void display(){
+        System.out.println("Class A");
+    }
+
+}
+class B extends A{
+    void show(){
+        System.out.println("Java is fun");
+    }
+    void display(){
+        super.display();
+        System.out.println("Class B");
+    }
+
+}
+
+
+Output:
+Java is fun
+Class A
+Class B
+
+--------------------------------------------
