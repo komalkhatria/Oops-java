@@ -1,0 +1,661 @@
+abstract class A 
+	abstract method 
+	non-abstract method 
+
+class B ex A 
+		single level inheritance 
+		object through child class constructor 
+
+class Main:
+main method 
+
+
+
+abstract class A{
+    abstract void show();
+    void display(){
+        System.out.println("Class A");
+    }
+
+}
+class B extends A{
+    void show(){
+        System.out.println("Java is fun");
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        A obj= new B();
+        obj.show();
+        obj.display();
+    }
+}
+
+
+Output:
+Java is fun
+Class A
+
+------------------------------------------------------
+
+abstract class A 
+	abstract method 
+	non-abstract method 
+
+class B ex A 
+		multilevel inheritance 
+		object through child class constructor 
+
+class Main:
+main method 
+
+
+
+abstract class A{
+    abstract void show();
+    void display(){
+        System.out.println("Class A");
+    }
+
+}
+class B extends A{
+    void show(){
+        System.out.println("Java is fun");
+    }
+}
+class C extends B{
+    void show(){
+        System.out.println("Programming is fun");
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        A obj= new C();
+        obj.show();
+        obj.display();
+    }
+}
+
+
+Output:
+Programming is fun
+Class A
+
+------------------------------------------------------
+
+abstract class A 
+	abstract method 
+	non-abstract method 
+
+class B ex A 
+		heirarichal level inheritance 
+		object through child class constructor 
+
+class Main:
+main method 
+
+
+
+abstract class A{
+    abstract void show();
+    void display(){
+        System.out.println("Class A");
+    }
+
+}
+class B extends A{
+    void show(){
+        System.out.println("Java is fun");
+    }
+}
+class C extends A{
+    void show(){
+        System.out.println("Programming is fun");
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        A object= new B();
+        object.show();
+        object.display();
+        A obj= new C();
+        obj.show();
+        obj.display();
+    }
+}
+
+
+Output:
+Java is fun
+Class A
+Programming is fun
+Class A
+
+------------------------------------------------------
+
+abstract class A 
+	abstract method 
+	non-abstract method 
+
+abstract class B
+	abstract method 
+	non-abstract method 
+
+abstract class C
+	abstract method 
+	non-abstract method 
+
+class H ex B
+
+class D ex C
+
+class E ex A
+
+class F ex H
+
+class G ex C
+
+Main class 
+main method : call all child class through child class constructor 
+
+
+
+
+abstract class A{
+    abstract void showA();
+    void displayA(){
+        System.out.println("Class A");
+    }
+}
+
+abstract class B{
+    abstract void showB();
+    void displayB(){
+        System.out.println("Class B");
+    }
+}
+
+abstract class C{
+    abstract void showC();
+    void displayC(){
+        System.out.println("Class C");
+    }
+}
+
+class H extends B{
+    void showB(){
+        System.out.println("B class abstract method");
+    }
+}
+class D extends C{
+    void showC(){
+        System.out.println("C class abstract method");
+    }
+}
+class E extends A{
+    void showA(){
+        System.out.println("A class abstract method");
+    }
+}
+class F extends H{
+
+}
+class G extends C{
+    void showC(){
+        System.out.println("C class abstract method");
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        E obE= new E();
+        obE.showA();
+        obE.displayA();
+        F obF= new F();
+        obF.showB();
+        obF.displayB();
+        D obD= new D();
+        obD.showC();
+        obD.displayC();
+        G obG= new G();
+        obG.showC();
+        obG.displayC();
+    }
+}
+
+
+
+Output:
+A class abstract method
+Class A
+B class abstract method
+Class B
+C class abstract method
+Class C
+C class abstract method
+Class C
+
+------------------------------------------------------
+
+abstract class A
+	abstract method : no return and no argument 
+
+class Main :
+main method :anonymous inner class 
+
+
+abstract class A{
+    abstract void show();
+}
+
+public class Main{
+    public static void main(String[] args){
+       A obj= new A(){
+           void show(){
+               System.out.println("Anonymous Inner Class");
+           }
+       };
+       obj.show();
+    }
+}
+
+
+Output:
+Anonymous Inner Class
+
+------------------------------------------------------
+
+abstract class A
+	abstract method : no return and  argument 
+
+class Main :
+main method :anonymous inner class 
+
+
+
+abstract class A{
+    abstract void show(String expression);
+}
+
+public class Main{
+    public static void main(String[] args){
+       A obj= new A(){
+           void show(String expression){
+                   System.out.println("This is amazing, " + expression);
+           }
+       };
+       obj.show("whoa!");
+    }
+}
+
+
+Output:
+This is amazing, whoa!
+
+--------------------------------------------------
+abstract class A
+	abstract method :  return and no argument 
+
+class Main :
+main method :anonymous inner class 
+
+
+abstract class A{
+    abstract int show();
+}
+
+public class Main{
+    public static void main(String[] args){
+       A obj= new A(){
+           int show(){
+                   System.out.println("This is amazing");
+                   return 0;
+           }
+       };
+       obj.show();
+    }
+}
+
+
+Output:
+Anonymous inner class
+
+------------------------------------------------------
+
+abstract class A
+	abstract method :  return and  argument 
+
+class Main :
+main method :anonymous inner class 
+
+
+
+abstract class A{
+    abstract int show(int n);
+}
+
+public class Main{
+    public static void main(String[] args){
+       A obj= new A(){
+           int show(int n){
+                   System.out.println("Anonymous inner class " + n);
+                   return 0;
+           }
+       };
+       obj.show(1);
+    }
+}
+
+
+Output:
+Anonymous inner class 1
+
+------------------------------------------------------
+
+--------------------------------------------------
+abstract class A
+	abstract method : covariant return type 
+
+class Main :
+main method :anonymous inner class 
+
+
+
+abstract class A{
+    abstract A show();
+}
+
+public class Main{
+    public static void main(String[] args){
+       A obj= new A(){
+           A show(){
+                   System.out.println("Anonymous inner class");
+                   return this;
+           }
+       };
+       obj.show();
+    }
+}
+
+
+Output:
+Anonymous inner class
+
+------------------------------------------------------
+
+abstract class A
+	non abstract method : return and  argument 
+	abstract method : return and no argument 
+	non abstract method :no return and  argument 
+	abstract method :no return and no argument 
+	non abstract method : covariant
+
+class B ex A 
+return and argument 
+constructor :parameterised 
+
+class Main :
+main method :anonymous inner class 
+	child k through abstraction call 
+	child k constructor through abstraction call
+
+
+
+
+
+abstract class A{
+    int display(int n){
+        System.out.println("This is method " + n);
+        return 0;
+    }
+    abstract int show();
+    void message(){
+        System.out.println("Java is a programming language");
+    }
+    abstract void print();
+    A greet(){
+        System.out.println("Good morning!");
+        return this;
+    }
+}
+
+class B extends A{
+    int show(){
+        System.out.println("Abstract class A method");
+        return 0;
+    }
+    void print(){
+        System.out.println("Empty method");
+    }
+    int showB(int b){
+        System.out.println("Class B method");
+        return 0;
+    }
+    B(String name){
+        System.out.println("Hello " + name);
+    }
+}
+
+public class Main{
+    public static void main(String[] args){
+
+        //through anonymous inner class
+        A obj= new A(){
+            int show(){
+                System.out.println("Abstract class A method show");
+                return 0;
+            }
+            void print(){
+                System.out.println("Abstract class A method print");
+            }
+        };
+        System.out.println("through anonymous inner class");
+        obj.display(1);
+        obj.show();
+        obj.message();
+        obj.print();
+        obj.greet();
+
+        //through child class
+        System.out.println();
+        System.out.println("through child class");
+        B obB= new B("Joe");
+        obB.display(2);
+        obB.show();
+        obB.message();
+        obB.print();
+        obB.greet();
+
+        //through child class constructor
+        System.out.println();
+        System.out.println("through child class constructor");
+        A a= new B("Chris");
+        a.display(3);
+        a.show();
+        a.message();
+        a.print();
+        a.greet();
+    }
+}
+
+
+
+Output:
+through anonymous inner class
+This is method 1
+Abstract class A method show
+Java is a programming language
+Abstract class A method print
+Good morning!
+
+through child class
+Hello Joe
+This is method 2
+Abstract class A method
+Java is a programming language
+Empty method
+Good morning!
+
+through child class constructor
+Hello Chris
+This is method 3
+Abstract class A method
+Java is a programming language
+Empty method
+Good morning! 
+
+------------------------------------------------------
+
+abstract class A
+	non abstract method : return and  argument 
+	abstract method : return and no argument 
+	non abstract method :no return and  argument 
+	abstract method :no return and no argument 
+	non abstract method : covariant
+
+class B 
+anonymous inner class  
+
+class Main :
+main method :
+
+
+
+abstract class A{
+    int display(int n){
+        System.out.println("This is method " + n);
+        return 0;
+    }
+    abstract int show();
+    void message(){
+        System.out.println("Java is a programming language");
+    }
+    abstract void print();
+    A greet(){
+        System.out.println("Good morning!");
+        return this;
+    }
+}
+
+class B{
+    void anonymousInnerClassBlock(){
+        A obj= new A(){
+            int show(){
+                System.out.println("Abstract class A method show");
+                return 0;
+            }
+            void print(){
+                System.out.println("Abstract class A method print");
+            }
+        };
+        obj.display(1);
+        obj.show();
+        obj.message();
+        obj.print();
+        obj.greet();
+    }
+
+    int show(){
+        System.out.println("Abstract class A method");
+        return 0;
+    }
+    void print(){
+        System.out.println("Empty method");
+    }
+
+}
+
+public class Main{
+    public static void main(String[] args){
+        B obj= new B();
+        obj.anonymousInnerClassBlock();
+
+    }
+}
+
+
+Output:
+This is method 1
+Abstract class A method show
+Java is a programming language
+Abstract class A method print
+Good morning!
+
+------------------------------------------------------
+
+abstract class A
+	non abstract method : return and  argument 
+	abstract method : return and no argument 
+	non abstract method :no return and  argument 
+	abstract method :no return and no argument 
+	non abstract method : covariant
+
+class B ex A 
+anonymous inner class  
+
+class Main :
+main method :
+access 
+
+
+
+abstract class A{
+    int display(int n){
+        System.out.println("This is method " + n);
+        return 0;
+    }
+    abstract int show();
+    void message(){
+        System.out.println("Java is a programming language");
+    }
+    abstract void print();
+    A greet(){
+        System.out.println("Good morning!");
+        return this;
+    }
+}
+
+class B extends A{
+    void anonymousInnerClassBlock(){
+        A obj= new A(){
+            int show(){
+                System.out.println("Abstract class A method show");
+                return 0;
+            }
+            void print(){
+                System.out.println("Abstract class A method print");
+            }
+        };
+        obj.display(1);
+        obj.show();
+        obj.message();
+        obj.print();
+        obj.greet();
+    }
+
+    int show(){
+        System.out.println("Abstract class A method");
+        return 0;
+    }
+    void print(){
+        System.out.println("Empty method");
+    }
+
+}
+
+public class Main{
+    public static void main(String[] args){
+        B obj= new B();
+        obj.anonymousInnerClassBlock();
+
+    }
+}
+
+
+Output:
+This is method 1
+Abstract class A method show
+Java is a programming language
+Abstract class A method print
+Good morning!
+
+--------------------------------------------------
