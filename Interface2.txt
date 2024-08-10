@@ -1,0 +1,825 @@
+interface 
+	class A
+		method1 
+
+class B -->method1 
+
+class Main :B k through A ki property access krni hey 
+
+
+
+interface I{
+    class A{
+        void message(){
+            System.out.println("Hello there!");
+        }
+    }
+}
+class B extends I.A{
+
+}
+public class Main{
+    public static void main(String args[]){
+        B obj= new B();
+        obj.message();
+    }
+}
+
+
+Output:
+Hello there!
+
+------------------------------------------------------------
+
+interface 
+	class A
+		method1 :no return and argument 
+		method2: return and argument 
+		method3: return and no argument 
+		method4 :covariant return type 
+
+class B -->method1 
+
+class Main :B k through A ki property access krni hey 
+
+
+
+interface I{
+    class A{
+        int age=18;
+        void message(String name){
+            System.out.println("Hello " + name);
+        }
+        int fav(int n){
+            System.out.print("Your lucky number is ");
+            return n;
+        }
+        int age(){
+            System.out.print("Minimum age is ");
+            return age;
+        }
+        A show(){
+            System.out.println("Covariant method");
+            return this;
+        }
+    }
+}
+class B extends I.A{
+
+}
+public class Main{
+    public static void main(String args[]){
+        B obj= new B();
+        obj.message("Tyler");
+    }
+}
+
+
+Output:
+Hello Tyler
+
+------------------------------------------------------------
+
+interface 
+	class A
+		method1 :no return and argument 
+	class B1
+		method2: return and argument 
+	class C
+		method3: return and no argument 
+	class D
+		method4 :covariant return type 
+
+class B -->method1 
+
+class Main :B k through A ki property access krni hey 
+all classes access the proeprties 
+
+
+interface I{
+    class A {
+        void message(String name) {
+            System.out.println("Hello " + name);
+        }
+    }
+    class B{
+        int fav(int n){
+            System.out.print("Your lucky number is ");
+            return n;
+        }
+    }
+    class C{
+        int age=18;
+        int age(){
+            System.out.print("Minimum age is ");
+            return age;
+        }
+    }
+    class D{
+        D show(){
+            System.out.println("Covariant method");
+            return this;
+        }
+    }
+
+}
+class ChildA extends I.A{
+
+}
+class ChildB extends I.B{
+
+}
+class ChildC extends I.C{
+
+}
+class ChildD extends I.D{
+
+}
+public class Main{
+    public static void main(String args[]){
+        ChildA obA= new ChildA();
+        obA.message("Chris");
+        ChildB obB= new ChildB();
+        System.out.println(obB.fav(29));
+        ChildC obC= new ChildC();
+        System.out.println(obC.age());
+        ChildD obD= new ChildD();
+        obD.show();
+    }
+}
+
+
+
+Output:
+Hello Chris
+Your lucky number is 29
+Minimum age is 18
+Covariant method
+
+------------------------------------------------------------
+
+interface 
+	method2 :return and argument 
+	class A
+		method1 
+
+class B -->method1 
+
+class Main :B k through A ki property access krni hey 
+
+
+
+interface I{
+    int fav(int n);
+    class A{
+        void display(){
+            System.out.println("Class A method");
+        }
+    }
+}
+class B extends I.A{
+    public int fav(int n){
+        System.out.print("Your lucky number is ");
+        return n;
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        B obj= new B();
+        System.out.println(obj.fav(19));
+        obj.display();
+    }
+}
+
+
+Output:
+Your lucky number is 19
+Class A method
+
+------------------------------------------------------------
+
+class A
+	interface C
+		method1 :no return and no argument 
+		method2:no return and  argument 
+		method3:return and no argument 
+		method4 : return and  argument 
+
+class B access A
+
+Main class 
+main method :access B k through  
+
+
+
+class A{
+    interface C{
+        int age= 18;
+        void show();
+        void greet(String name);
+        int age();
+        int lucky(int n);
+    }
+}
+class B implements A.C{
+    public void show(){
+        System.out.println("Void method");
+    }
+    public void greet(String name){
+        System.out.println("Good morning, " + name);
+    }
+    public int age(){
+        System.out.print("Minimum age is ");
+        return age;
+    }
+    public int lucky(int n){
+        System.out.print("Your lucky number is ");
+        return n;
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        B obj= new B();
+        obj.show();
+        obj.greet("James");
+        System.out.println(obj.age());
+        System.out.println(obj.lucky(20));
+    }
+}
+
+
+Output:
+Void method
+Good morning, James
+Minimum age is 18
+Your lucky number is 20
+
+------------------------------------------------------------
+
+class A
+	interface C
+		method1 :no return and no argument 
+	interface D
+		method2:no return and  argument 
+	interface E
+		method3:return and no argument 
+	interface F
+		method4 : return and  argument 
+
+class B access A
+
+Main class 
+main method :access B k through  
+
+
+
+
+class A{
+    interface C {
+        void show();
+    }
+    interface D {
+        void greet(String name);
+    }
+    interface E {
+        int age = 18;
+        int age();
+    }
+    interface F{
+        int lucky(int n);
+    }
+}
+class B implements A.C, A.D, A.E, A.F{
+    public void show(){
+        System.out.println("Void method");
+    }
+    public void greet(String name){
+        System.out.println("Good morning, " + name);
+    }
+    public int age(){
+        System.out.print("Minimum age is ");
+        return age;
+    }
+    public int lucky(int n){
+        System.out.print("Your lucky number is ");
+        return n;
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        B obj= new B();
+        obj.show();
+        obj.greet("James");
+        System.out.println(obj.age());
+        System.out.println(obj.lucky(20));
+    }
+}
+
+
+Output:
+Void method
+Good morning, James
+Minimum age is 18
+Your lucky number is 20
+
+------------------------------------------------------------
+
+class
+	class 
+		method
+
+access 
+
+
+class Number{
+    class One{
+        void digit(){
+            System.out.println("One = 1");
+        }
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        Number num= new Number();
+        Number.One numOne= num.new One();
+        numOne.digit();
+    }
+}
+
+
+Output:
+One = 1
+
+------------------------------------------------------------
+
+interface 
+	class 
+	interface 
+
+access 
+
+
+
+interface I{
+    void display();
+    class A{
+        void show(){
+            System.out.println("Class A method");
+        }
+    }
+    interface I2{
+        void msg();
+    }
+}
+class Child extends I.A implements I, I.I2{
+    public void display(){
+        System.out.println("Method of outermost interface");
+    }
+    public void msg(){
+        System.out.println("Method of inner interface ");
+    }
+}
+public class Main{
+    public static void main(String args[]){
+       Child obj= new Child();
+       obj.display();
+       obj.show();
+       obj.msg();
+    }
+}
+
+
+Output:
+Method of outermost interface
+Class A method
+Method of inner interface 
+
+------------------------------------------------------------
+
+class
+	interface
+	class 
+
+access 
+
+
+
+class C{
+    void display(){
+        System.out.println("Method of outermost class");
+    }
+    interface I{
+        void msg();
+    }
+    class A{
+        void show(){
+            System.out.println("Method of inner Class A");
+        }
+    }
+
+}
+class Child implements C.I{
+    public void msg(){
+        System.out.println("Method of inner interface ");
+    }
+}
+public class Main{
+    public static void main(String args[]){
+       C c= new C();
+       c.display();
+
+       C.A a= c.new A();
+       a.show();
+
+       Child obj= new Child();
+       obj.msg();
+
+    }
+}
+
+
+Output:
+Method of outermost class
+Method of inner Class A
+Method of inner interface 
+
+------------------------------------------------------------
+
+interface A
+	interface B
+		interface C 
+
+	class D
+		class E
+access 
+
+
+
+
+interface A{
+    void showA();
+    interface B{
+        void showB();
+        interface C{
+            void showC();
+        }
+    }
+    class D{
+        void displayD(){
+            System.out.println("Second level class D");
+            E e= new E();
+            e.displayE();
+        }
+        class E{
+            void displayE(){
+                System.out.println("Third level class E");
+            }
+        }
+    }
+}
+
+class Child extends A.D implements A, A.B, A.B.C{
+    public void showA(){
+        System.out.println("First level interface A");
+    }
+    public void showB(){
+        System.out.println("Second level interface B");
+    }
+    public void showC(){
+        System.out.println("Third level interface C");
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        Child obj= new Child();
+        obj.showA();
+        obj.showB();
+        obj.showC();
+        obj.displayD();
+
+
+    }
+}
+
+
+Output:
+First level interface A
+Second level interface B
+Third level interface C
+Second level class D
+Third level class E
+
+------------------------------------------------------------
+
+class A
+	interface B
+		interface C
+
+	class D
+		class E
+
+access 
+
+
+
+class A{
+    void showA(){
+        System.out.println("Outermost class A");
+    }
+    interface B{
+        void displayB();
+        interface C{
+            void displayC();
+        }
+    }
+    class D{
+        void showD(){
+            System.out.println("    Second level class D");
+        }
+        class E{
+            void showE(){
+                System.out.println("        Third level class E");
+            }
+        }
+
+    }
+}
+
+
+class Child extends A implements A.B, A.B.C{
+    public void displayB(){
+        System.out.println("    Second level interface B");
+    }
+    public void displayC(){
+        System.out.println("        Third level interface C");
+    }
+}
+public class Main{
+    public static void main(String args[]){
+       Child obj= new Child();
+       obj.showA();
+       obj.displayB();
+       obj.displayC();
+       A a= new A();
+       A.D d= a.new D();
+       d.showD();
+       A.D.E e= d.new E();
+       e.showE();
+
+    }
+}
+
+
+Output:
+Outermost class A
+    Second level interface B
+        Third level interface C
+    Second level class D
+        Third level class E
+
+------------------------------------------------------------
+
+//ANONYMOUS INNER CLASS
+ 
+
+interface A 
+	method : no return and no argument 
+
+interface B
+	method : no return and  argument 
+
+interface C
+	method :  return and no argument 
+
+interface D 
+	method :  return and  argument 
+
+
+class Main : anonymous inner class 
+
+
+
+
+interface A{
+    void show();
+}
+interface B{
+    void greet(String name);
+}
+interface C{
+    int age= 18;
+    int age();
+}
+interface D{
+    int luckyNum(int n);
+}
+public class Main{
+
+    public static void main(String args[]){
+
+        A a= new A(){
+            public void show(){
+                System.out.println("void method");
+            }
+        };
+
+        B b = new B(){
+            public void greet(String name){
+                System.out.println("Good morning, " + name);
+            }
+        };
+
+        C c= new C(){
+            public int age(){
+                System.out.print("Minimum age is ");
+                return age;
+            }
+        };
+
+        D d= new D(){
+            public int luckyNum(int n){
+                System.out.print("Your lucky number is ");
+                return n;
+            }
+        };
+
+        a.show();
+        b.greet("Jimin");
+        System.out.println(c.age());
+        System.out.println(d.luckyNum(20));
+
+    }
+}
+
+
+
+Output:
+void method
+Good morning, Jimin
+Minimum age is 18
+Your lucky number is 20
+
+------------------------------------------------------------
+
+class A
+
+interface B
+
+class C both access A and B 
+
+Main class access 
+
+
+
+
+class A{
+    void show(){
+        System.out.println("Void method");
+    }
+}
+interface B{
+    void greet(String name);
+}
+
+class C extends A implements B{
+    public void greet(String name){
+        System.out.println("Good day, " + name);
+    }
+}
+public class Main{
+
+    public static void main(String args[]){
+        C obj= new C();
+        obj.show();
+        obj.greet("Harsh");
+    }
+}
+
+
+Output:
+Void method
+Good day, Harsh
+
+------------------------------------------------------------
+
+class A
+
+interface B
+
+interface C
+
+interface D 
+
+class C both acces A and B and C and D  
+
+Main class access 
+
+
+
+
+class A{
+    void showA(){
+        System.out.println("Class A method");
+    }
+    interface B{
+        void showB();
+    }
+    interface C{
+        void showC();
+    }
+    interface D{
+        void showD();
+    }
+}
+
+class C extends A implements A.B, A.C, A.D{
+    public void showB(){
+        System.out.println("Interface B method");
+    }
+    public void showC(){
+        System.out.println("Interface C method");
+    }
+    public void showD(){
+        System.out.println("Interface D method");
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        C obj= new C();
+        obj.showA();
+        obj.showB();
+        obj.showC();
+        obj.showD();
+    }
+}
+
+
+
+Output:
+Class A method
+Interface B method
+Interface C method
+Interface D method
+
+------------------------------------------------------------
+
+class A 
+	interface F
+
+interface B
+	class K
+
+class C both access 
+
+
+
+class A{
+    void showA(){
+        System.out.println("Class A method");
+    }
+    interface F{
+        void showF();
+    }
+}
+interface B{
+    void showB();
+    class K{
+        void showK(){
+            System.out.println("Class K method");
+        }
+    }
+    void displayK();
+}
+
+
+class C extends A implements A.F, B{
+    public void showF(){
+        System.out.println("Interface F method");
+    }
+    public void showB(){
+        System.out.println("Interface B method");
+    }
+    public void displayK(){
+        K obK= new K();
+        obK.showK();
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        C obj= new C();
+        obj.showA();
+        obj.showF();
+        obj.showB();
+        obj.displayK();
+    }
+}
+
+
+Output:
+Class A method
+Interface F method
+Interface B method
+Class K method
+
+------------------------------------------------------------
+
