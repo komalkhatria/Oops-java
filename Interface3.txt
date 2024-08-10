@@ -1,0 +1,416 @@
+interface 
+	method :define no return and no argument 
+
+another class 
+->return and argument :method 
+
+Main :main method access
+
+
+
+interface A{
+    default void show(){
+        System.out.println("Non abstract method of interface A");
+    }
+}
+class B implements A{
+    String greet(String name){
+        System.out.print("Hello ");
+        return name;
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        B obj= new B();
+        obj.show();
+        System.out.println(obj.greet("Krishav"));
+    }
+}
+
+
+Output:
+Non abstract method of interface A
+Hello Krishav
+
+------------------------------------------------------------------------
+
+interface 
+	method :define no return and  argument 
+
+another class 
+->return and no argument :method 
+
+
+Main :main method access
+
+
+
+interface A{
+    default void show(int n){
+        System.out.println("Non abstract method of interface A " + n);
+    }
+}
+class B implements A{
+    int greet(){
+        System.out.print("Hello");
+        return 0;
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        B obj= new B();
+        obj.show(1);
+        obj.greet();
+    }
+}
+
+
+Output:
+Non abstract method of interface A 1
+Hello
+
+------------------------------------------------------------------------
+
+interface 
+	method :define  return and no argument 
+
+another class 
+->no return and argument :method 
+
+Main :main method access
+
+
+
+interface A{
+    default int show(){
+        System.out.println("Non abstract method of interface A");
+        return 0;
+    }
+}
+class B implements A{
+    void greet(String name){
+        System.out.print("Hello " + name);
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        B obj= new B();
+        obj.show();
+        obj.greet("Vanya");
+    }
+}
+
+
+Output:
+Non abstract method of interface A
+Hello Vanya
+
+------------------------------------------------------------------------
+
+interface 
+	method :define  return and  argument 
+
+another class 
+->no return and no argument :method 
+
+Main :main method access
+
+
+
+interface A{
+    default int show(int n){
+        System.out.print("Non abstract method of interface A ");
+        return n;
+    }
+}
+class B implements A{
+    void display(){
+        System.out.print("Class B method");
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        B obj= new B();
+        System.out.println(obj.show(1));
+        obj.display();
+    }
+}
+
+
+
+Output:
+Non abstract method of interface A 1
+Class B method
+
+------------------------------------------------------------------------
+
+interface A
+	method1 :non-abs :println( "A interface method non-abstract") 
+	method2 :abs
+	interface B
+				method3 :abs
+				method4 :non-abs
+		interface C
+					method5 :abs
+					method6:non abs
+
+	interface D
+		method7 :abs
+		method8 :non abs
+
+	class E
+		method9
+		class F
+		 method10
+	interface G
+		method11: abs
+		method12: non abs
+
+		class H
+			method 13
+		       method 14
+
+all method access 
+
+
+
+
+
+interface A{
+    default void method1(){
+        System.out.println("Interface A non-abstract method1");
+    }
+    void method2();
+    interface B{
+        void method3();
+        default void method4(){
+            System.out.println("Interface A.B non-abstract method4");
+        }
+        interface C{
+            void method5();
+            default void method6(){
+                System.out.println("Interface A.B.C non-abstract method6");
+            }
+        }
+    }
+    interface D{
+        void method7();
+        default void method8(){
+            System.out.println("Interface A.D non-abstract method8");
+        }
+    }
+    class E{
+        void method9(){
+            System.out.println("Class A.E method9");
+        }
+        class F{
+            void method10(){
+                System.out.println("Class A.E.F method10");
+            }
+        }
+    }
+    interface G{
+        void method11();
+        default void method12(){
+            System.out.println("Interface A.G non-abstract method12");
+        }
+        class H{
+            void method13(){
+                System.out.println("Class A.G.H abstract method13");
+            }
+            void method14(){
+                System.out.println("Class A.G.H abstract method14");
+            }
+        }
+    }
+}
+
+
+
+
+class X extends A.E implements A, A.B, A.B.C, A.D{
+    public void method2(){
+        System.out.println("Interface A method2");
+    }
+    public void method3(){
+        System.out.println("Interface A.B method3");
+    }
+    public void method5(){
+        System.out.println("Interface A.B.C method5");
+    }
+    public void method7(){
+        System.out.println("Interface A.D method7");
+    }
+}
+
+
+
+class Z extends A.G.H implements A.G{
+    public void method11(){
+        System.out.println("Interface A.G method 11");
+    }
+}
+
+
+
+public class Main{
+    public static void main(String args[]){
+
+        X x= new X();
+        x.method1();
+        x.method2();
+        x.method3();
+        x.method4();
+        x.method5();
+        x.method6();
+        x.method7();
+        x.method8();
+        x.method9();
+
+	A.E obj= new A.E();
+        A.E.F f= obj.new F();
+        f.method10();
+
+        Z z= new Z();
+        z.method11();
+        z.method12();
+        z.method13();
+        z.method14();
+    }
+}
+
+
+
+Output:
+Interface A non-abstract method1
+Interface A method2
+Interface A.B method3
+Interface A.B non-abstract method4
+Interface A.B.C method5
+Interface A.B.C non-abstract method6
+Interface A.D method7
+Interface A.D non-abstract method8
+Class A.E method9
+Class A.E.F method10
+Interface A.G method 11
+Interface A.G non-abstract method12
+Class A.G.H abstract method13
+Class A.G.H abstract method14
+
+---------------------------------------------------------
+
+interface A 
+	method : no return and no argument 
+
+interface B
+	method : no return and  argument 
+
+interface C
+	method :  return and no argument 
+
+interface D 
+	method :  return and  argument 
+
+class E -->access interface 
+
+class Main :make object 
+child k through access
+
+
+
+
+interface A{
+    void show();
+}
+interface B{
+    void greet(String name);
+}
+interface C{
+    int display();
+}
+interface D{
+    int message(int n);
+}
+class E implements A, B, C, D{
+    public void show(){
+        System.out.println("Java is fun");
+    }
+    public void greet(String name){
+        System.out.println("Hello " + name);
+    }
+    public int display(){
+        System.out.println("return and no argument method");
+        return 0;
+    }
+    public int message(int n){
+        System.out.println("return and  argument method");
+        return 0;
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        E obj= new E();
+        obj.show();
+        obj.greet("Abhi");
+        obj.display();
+        obj.message(4);
+    }
+}
+
+
+
+Output:
+Java is fun
+Hello Abhi
+return and no argument method
+return and  argument method
+
+---------------------------------------------------------
+
+interface A {
+    //method :public abstract method 
+    private void show(){
+        System.out.println("hello");
+    }
+}
+
+class B implements A {
+    
+}
+
+public class Main1 {
+    public static void main(String[] args) {
+        A p = new B();
+        p.show();
+    }
+}
+
+
+
+
+interface A {
+    //method :public abstract method
+    private static void show(){
+        System.out.println("hello");
+    }
+    class G{
+        void show1(){
+            show();
+        }
+    }
+}
+
+class B extends A.G {
+}
+
+public class Main {
+    public static void main(String[] args) {
+        B p=new B();
+        p.show1();
+    }
+}
+
+
+Output:
+hello
+-----------------------------------------------------------------------------------------
