@@ -1,0 +1,307 @@
+nested static 
+1)outer class non static and inner class static and method  static : 
+
+
+
+class A{
+    static class B{
+        static void show(){
+            System.out.println("Hello World");
+        }
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        A.B.show();
+    }
+}
+
+
+Output:
+Hello World
+
+-----------------------------------------------------------
+
+2)outer class non  static and inner class non static and method  static : 
+
+
+class A{
+    class B{
+        static void show(){
+            System.out.println("Hello World");
+        }
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        A o= new A();
+        A.B b= o.new B();
+        b.show();
+    }
+}
+
+
+Output:
+Hello World
+
+-----------------------------------------------------------
+
+3)outer class  non static and inner class static and method  non static : 
+
+
+class A{
+    static class B{
+        void show(){
+            System.out.println("Hello World");
+        }
+    }
+    
+}
+public class Main{
+    public static void main(String args[]){
+        A.B.show();
+    }
+}
+
+
+Output:
+java: non-static method show() cannot be referenced from a static context
+
+(static class B cannot have non static method show() )
+
+-----------------------------------------------------------
+
+4)outer class  non static and inner class static and method  non static :
+
+5)
+class A 
+	static class B static method 
+	static class C static method 
+
+
+class A{
+    static class B{
+        static void showB(){
+            System.out.println("static class B, static method");
+        }
+    }
+    static class C{
+        static void showC(){
+            System.out.println("static class C, static method");
+        }
+    }
+
+}
+public class Main{
+    public static void main(String args[]){
+        A.B.showB();
+        A.C.showC();
+    }
+}
+
+
+Output:
+static class B, static method
+static class C, static method
+
+-----------------------------------------------------------
+
+6)outer class  non static and inner class static and method  non static and instance variable static 
+
+
+
+class A{
+    static class B{
+        static int a=10;
+        void showB(){
+            System.out.println("static class B, static method " + a);
+        }
+    }
+
+}
+public class Main{
+    public static void main(String args[]){
+        A.B.showB();
+    }
+}
+
+
+Output:
+java: non-static method showB() cannot be referenced from a static context
+
+(static class B cannot have non static method showB() )
+
+-----------------------------------------------------------
+
+7)
+outer class  non static and inner class static and method  non static and instance variable non static 
+
+
+
+class A{
+    static class B{
+        int a=10;
+        void showB(){
+            System.out.println("static class B, static method " + a);
+        }
+    }
+
+}
+public class Main{
+    public static void main(String args[]){
+        A.B.showB();
+    }
+}
+
+
+Output:
+java: non-static method showB() cannot be referenced from a static context
+
+(static class B cannot have non-static variables or non-static methods)
+
+-----------------------------------------------------------
+
+8)
+outer class  non static and inner class non static and method  non static and instance variable non static 
+
+
+class A{
+    class B{
+        int a= 10;
+        void show(){
+            System.out.println("Non-static method in non-static class B");
+            System.out.println("a = " + a);
+        }
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        A.B obj= new A().new B();
+        obj.show();
+    }
+}
+
+
+Output:
+Non-static method in non-static class B
+a = 10
+
+------------------------------------------------------------------
+
+9)
+class A 
+	non static class B non static method 
+	non static class C static method 
+
+
+
+class A{
+    class B{
+        void show(){
+            System.out.println("Non-static method in non-static class B");
+        }
+    }
+    class C{
+        static void show(){
+            System.out.println("Static method in non-static class C");
+        }
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        A.B obB= new A().new B();
+        obB.show();
+        A.C obC= new A().new C();
+        obC.show();
+    }
+}
+
+
+Output:
+Non-static method in non-static class B
+Static method in non-static class C
+
+------------------------------------------------------------------
+
+10)
+class A 
+	static class B static method and instance variable non static 
+
+	static class C static method and instance variable non static 
+
+
+
+class A{
+    static class B{
+        int a=10;
+        static void show(){
+            System.out.println("Static method in static class B");
+            System.out.println("a= " + a);
+        }
+    }
+    static{
+        class C{
+            int x=10;
+            static void display(){
+                System.out.println("Static method in static class C in static block");
+                System.out.println("x= " + x);
+            }
+        }
+	C ob= new C();
+        ob.display();
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        A.B.show();
+        new A();
+    }
+}
+
+
+Output:
+java: non-static variable a cannot be referenced from a static context
+
+(static method in class cannot access non-static instance variable)
+
+------------------------------------------------------------------
+
+11)
+class A 
+	static class B static method and instance variable  static 
+
+	static class C static method and instance variable  static
+
+
+
+class A{
+    static class B{
+        static int b=10;
+        static void show(){
+            System.out.println("Static method in static class B");
+            System.out.println("b= " + b);
+        }
+    }
+    static class C{
+        static int c=10;
+        static void show(){
+            System.out.println("Static method in static class C");
+            System.out.println("c= " + c);
+        }
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        A.B.show();
+        A.C.show();
+    }
+}
+
+
+Output:
+Static method in static class B
+b= 10
+Static method in static class C
+c= 10 
+
+------------------------------------------------------------------
