@@ -1,0 +1,328 @@
+1)
+Write a Java program to find power of any number x ^ y.
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int x, y, power=1;
+        System.out.print("Enter a number: ");
+        x= sc.nextInt();
+        System.out.print("Enter power: ");
+        y= sc.nextInt();
+        for(int i=1; i<=y; i++){
+            power*=x;
+        }
+        System.out.println(x + "^" + y + " = " + power);
+    }
+}
+
+Output:
+Enter a number: 3
+Enter power: 5
+3^5 = 243
+
+------------------------------------------------------------------------
+
+2)
+Write a Java program to input marks of five subjects Physics, Chemistry, Biology,
+Mathematics and Computer. Calculate percentage and grade according to
+following:
+Percentage >= 90% : Grade A
+Percentage >= 80% : Grade B
+Percentage >= 70% : Grade C
+Percentage >= 60% : Grade D
+Percentage >= 40% : Grade E
+Percentage < 40% : Grade F
+
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        float phy, chem, bio, math, comp, total, per;
+        char grade='F';
+        System.out.println("Enter marks of following subjects: ");
+        System.out.print("Physics: ");
+        phy= sc.nextFloat();
+        System.out.print("Chemistry: ");
+        chem= sc.nextFloat();
+        System.out.print("Biology: ");
+        bio= sc.nextFloat();
+        System.out.print("Mathematics: ");
+        math= sc.nextFloat();
+        System.out.print("Computer: ");
+        comp= sc.nextFloat();
+
+        total= phy + chem + bio + math + comp;
+        per= (total/500)*100;
+
+        if(per>=90){
+            grade='A';
+        }
+        else if(per>=80 && per<90){
+            grade='B';
+        }
+        else if(per>=70 && per<80){
+            grade='C';
+        }
+        else if(per>=60 && per<70){
+            grade='D';
+        }
+        else if(per>=40 && per<60){
+            grade='E';
+        }
+        else if(per<40){
+            grade='F';
+        }
+        System.out.println("Total marks= " + total);
+        System.out.println("Percentage= " + per);
+        System.out.println("Grade= " + grade);
+    }
+}
+
+
+Output:
+Enter marks of following subjects: 
+Physics: 82
+Chemistry: 78
+Biology: 75
+Mathematics: 91
+Computer: 93
+Total marks= 419.0
+Percentage= 83.8
+Grade= B
+
+------------------------------------------------------------------------
+
+3)
+Write a Java  program to print all natural numbers in reverse (from n to 1). - using while loop
+
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n;
+        System.out.print("Enter a number: ");
+        n= sc.nextInt();
+        while(n>=1){
+            System.out.print(n + " ");
+            n--;
+        }
+    }
+}
+
+Output:
+Enter a number: 25
+25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1
+
+------------------------------------------------------------------------
+
+4)
+Write a Java program to print all alphabets from a to z. - using while loop
+
+
+public class Main {
+    public static void main(String[] args) {
+        char alpha= 'a';
+        while(alpha<='z'){
+            System.out.print(alpha + " ");
+            alpha++;
+        }
+    }
+}
+
+Output:
+a b c d e f g h i j k l m n o p q r s t u v w x y z 
+
+------------------------------------------------------------------------
+
+5)
+Write a Java program to find sum of first and last digit of a number.
+
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n, last_digit, first_digit=0, sum;
+        System.out.print("Enter a number: ");
+        n= sc.nextInt();
+        int num= n;
+        last_digit= n%10;
+        while(n>0){
+            first_digit=n%10;
+            n= n/10;
+        }
+        sum= first_digit + last_digit;
+        System.out.println("Sum of first and last digits of " + num + " = " + sum);
+    }
+}
+
+Output:
+Enter a number: 3456
+Sum of first and last digits of 3456 = 9
+
+------------------------------------------------------------------------
+
+6)
+Write a Java program to calculate product of digits of a number
+
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n, prod=1;
+        System.out.print("Enter a number: ");
+        n= sc.nextInt();
+        int num= n;
+        while(n>0){
+            prod*= n%10;
+            n= n/10;
+        }
+        System.out.println("Product of the digits of " + num + " = " + prod);
+    }
+}
+
+
+Output:
+Enter a number: 5623
+Product of the digits of 5623 = 180
+
+------------------------------------------------------------------------
+
+7)
+Write a Java program to print all Prime numbers between 1 to n
+
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n;
+        System.out.print("Enter a number: ");
+        n= sc.nextInt();
+        for(int j=1; j<=n; j++){
+            int flag=0;
+            for(int i=2; i<j; i++){
+                if(j%i==0){
+                    flag=1;
+                    break;
+                }
+            }
+            if(flag==0){
+                System.out.print(j+ "  ");
+            }
+        }
+    }
+}
+
+Output:
+Enter a number: 30
+1  2  3  5  7  11  13  17  19  23  29
+
+------------------------------------------------------------------------
+
+8)
+Write a Java program to print Fibonacci series up to n terms
+
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n;
+        System.out.print("Enter a number: ");
+        n= sc.nextInt();
+        int a=0, b=1;
+        for(int i=1; i<=n; i++){
+            System.out.print(a + " ");
+            int c= a+b;
+            a=b;
+            b=c;
+        }
+    }
+}
+
+Output:
+Enter a number: 8
+0 1 1 2 3 5 8 13 
+
+------------------------------------------------------------------------
+
+9)
+Write a Java program that accepts two item’s weight (floating points' values ) and number of purchase (floating points' values) and calculate the average value of the items.  
+Test Data :
+Weight - Item1: 15
+No. of item1: 5
+Weight - Item2: 25
+No. of item2: 4
+Expected Output:
+Average Value = 19.444444
+
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        float w1, w2, total, avg;
+        int i1, i2;
+        System.out.print("Weight - Item1: ");
+        w1= sc.nextFloat();
+        System.out.print("No. of item1: ");
+        i1= sc.nextInt();
+        System.out.print("Weight - Item2: ");
+        w2= sc.nextFloat();
+        System.out.print("No. of item2: ");
+        i2= sc.nextInt();
+
+        total= (w1*i1) + (w2*i2);
+        avg= total/(i1+i2);
+        System.out.println("Average value of the items= " + avg);
+    }
+}
+
+
+Output:
+Weight - Item1: 15
+No. of item1: 5
+Weight - Item2: 25
+No. of item2: 4
+Average value of the items= 19.444445
+
+------------------------------------------------------------------------
+
+10)
+print floy'ds triangle in java 
+
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n;
+        System.out.print("Enter number of rows for floyd's triangle: ");
+        n= sc.nextInt();
+        int num=1;
+        for(int i=1; i<=n; i++){
+            for(int j=1; j<=i; j++){
+                System.out.print(num + " ");
+                num++;
+            }
+            System.out.println();
+        }
+    }
+}
+
+Output:
+Enter number of rows for floyd's triangle: 5
+1 
+2 3 
+4 5 6 
+7 8 9 10 
+11 12 13 14 15 
+
+------------------------------------------------------------------------
+
