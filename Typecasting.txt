@@ -1,0 +1,359 @@
+byte -> short -> char -> int -> long -> float -> double  
+
+byte-->short 
+byte-->char
+byte-->int  
+byte-->long
+byte-->float
+byte-->double 
+
+public class Main{
+    public static void main(String[] args){
+        byte b1= 56;
+        short s= b1;
+        char c= (char)b1;
+        int i= b1;
+        long l= b1;
+        float f= b1;
+        double d= b1;
+        System.out.println("byte= " + b1);
+        System.out.println("short= " + s);
+        System.out.println("char= " + c);
+        System.out.println("int= " + i);
+        System.out.println("long= " + l);
+        System.out.println("float= " + f);
+        System.out.println("double= " + d);
+    }
+}
+
+Output:
+byte= 56
+short= 56
+char= 8
+int= 56
+long= 56
+float= 56.0
+double= 56.0
+
+----------------------------------------------------------
+
+short -> char
+short -> int 
+short -> long
+short -> float
+short -> double 
+
+
+public class Main{
+    public static void main(String[] args){
+        short s= 217;
+        char c= (char)s;
+        int i= s;
+        long l= s;
+        float f= s;
+        double d= s;
+        System.out.println("char= " + c);
+        System.out.println("int= " + i);
+        System.out.println("long= " + l);
+        System.out.println("float= " + f);
+        System.out.println("double= " + d);
+
+    }
+}
+
+
+Output:
+char= Ù
+int= 217
+long= 217
+float= 217.0
+double= 217.0
+
+----------------------------------------------------------
+
+char -> int
+char -> long
+char ->  float
+char -> double 
+
+
+public class Main{
+    public static void main(String[] args){
+        char c= 'A';
+        int i= c;
+        long l= c;
+        float f= c;
+        double d= c;
+        System.out.println("char= " + c);
+        System.out.println("int= " + i);
+        System.out.println("long= " + l);
+        System.out.println("float= " + f);
+        System.out.println("double= " + d);
+
+    }
+}
+
+Output:
+char= A
+int= 65
+long= 65
+float= 65.0
+double= 65.0
+
+------------------------------------------------------------------------
+
+ int -> long
+ int ->  float
+ int -> double
+
+
+public class Main{
+    public static void main(String[] args){
+        int i= 125;
+        long l= i;
+        float f= i;
+        double d= i;
+        System.out.println("int= " + i);
+        System.out.println("long= " + l);
+        System.out.println("float= " + f);
+        System.out.println("double= " + d);
+
+    }
+}
+
+Output:
+int= 125
+long= 125
+float= 125.0
+double= 125.0
+
+--------------------------------
+long -> float
+long -> double 
+
+public class Main{
+    public static void main(String[] args){
+        long l= 210;
+        float f= l;
+        double d= l;
+        System.out.println("long= " + l);
+        System.out.println("float= " + f);
+        System.out.println("double= " + d);
+
+    }
+}
+
+Output:
+long= 210
+float= 210.0
+double= 210.0
+
+------------------------------------------------------------------------
+
+ float -> double 
+
+public class Main{
+    public static void main(String[] args){
+        float f= 21.5f;
+        double d= f;
+        System.out.println("float= " + f);
+        System.out.println("double= " + d);
+
+    }
+}
+
+Output:
+float= 21.5
+double= 21.5
+
+------------------------------------------------------------------------
+
+double -> float -> long -> int -> char -> short -> byte  
+
+double -> float 
+double -> long  
+double -> int  
+double -> char 
+double -> short 
+double ->  byte 
+
+
+public class Main{
+    public static void main(String[] args){
+        double d= 36.531;
+        byte b= (byte)d;
+        short s= (short)d;
+        int i= (int)d;
+        char c= (char)d;
+        long l= (long)d;
+        float f= (float)d;
+
+        System.out.println("double= " + d);
+        System.out.println("byte= " + b);
+        System.out.println("short= " + s);
+        System.out.println("char= " + c);
+        System.out.println("int= " + i);
+        System.out.println("long= " + l);
+        System.out.println("float= " + f);
+
+    }
+} 
+
+Output:
+double= 36.531
+byte= 36
+short= 36
+char= $
+int= 36
+long= 36
+float= 36.531
+------------------------------------------------------------------------
+
+float -> long
+float -> int 
+float ->  char
+float -> short
+float -> byte 
+
+public class Main{
+    public static void main(String[] args){
+        float f= 91.24f;
+        byte b= (byte)f;
+        short s= (short)f;
+        int i= (int)f;
+        char c= (char)f;
+        long l= (long)f;
+
+        System.out.println("float= " + f);
+        System.out.println("byte= " + b);
+        System.out.println("short= " + s);
+        System.out.println("char= " + c);
+        System.out.println("int= " + i);
+        System.out.println("long= " + l);
+    }
+}
+
+Output:
+float= 91.24
+byte= 91
+short= 91
+char= [
+int= 91
+long= 91
+------------------------------------------------------------------------
+
+long -> int
+long -> char
+long -> short
+long -> byte 
+
+public class Main{
+    public static void main(String[] args){
+        long l= 89;
+        byte b= (byte)l;
+        short s= (short)l;
+        int i= (int)l;
+        char c= (char)l;
+
+        System.out.println("long= " + l);
+        System.out.println("byte= " + b);
+        System.out.println("short= " + s);
+        System.out.println("char= " + c);
+        System.out.println("int= " + i);
+    }
+}
+
+Output:
+long= 89
+byte= 89
+short= 89
+char= Y
+int= 89
+------------------------------------------------------------------------
+
+int -> char
+int -> short
+int -> byte
+
+public class Main{
+    public static void main(String[] args){
+        int i= 56;
+        byte b= (byte)i;
+        short s= (short)i;
+        char c= (char)i;
+
+        System.out.println("int= " + i);
+        System.out.println("byte= " + b);
+        System.out.println("short= " + s);
+        System.out.println("char= " + c);
+    }
+}
+
+Output:
+int= 56
+byte= 56
+short= 56
+char= 8
+------------------------------------------------------------------------
+
+char -> short
+char -> byte
+
+public class Main{
+    public static void main(String[] args){
+        char c= 'J';
+        byte b= (byte)c;
+        short s= (short)c;
+        System.out.println("char= " + c);
+        System.out.println("byte= " + b);
+        System.out.println("short= " + s);
+    }
+}
+
+Output:
+char= J
+byte= 74
+short= 74
+------------------------------------------------------------------------
+
+short -> byte 
+
+public class Main{
+    public static void main(String[] args){
+        short s= 7;
+        byte b= (byte)s;
+        System.out.println("short= " + s);
+        System.out.println("byte= " + b);
+    }
+}
+
+Output:
+short= 7
+byte= 7
+------------------------------------------------------------------------
+
+double -> float -> long -> int -> char -> short -> byte  
+
+double---->long --->float 
+double-->int--->float 
+double--->char--->float 
+double--short--->float 
+
+
+public class Main{
+    public static void main(String[] args){
+        double d= 56.324;
+        float f= (long)d;
+        float f2= (int)d;
+        float f3= (char)d;
+        float f4= (short)d;
+        System.out.println("double= " + d);
+        System.out.println("double---->long --->float = " + f);
+        System.out.println("double---->int --->float = " + f2);
+        System.out.println("double---->char --->float = " + f3);
+        System.out.println("double---->short --->float = " + f4);
+    }
+}
+
+
+------------------------------------------------------------------------
