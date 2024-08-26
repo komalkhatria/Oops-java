@@ -1,0 +1,346 @@
+//file A - no return and no argument 
+
+class A {
+    void display(){
+        System.out.println("Welcome to Java");
+    }
+}
+
+//file B - no return and  argument 
+
+class B {
+    void greet(String name){
+        System.out.println("Hello " + name);
+    }
+}
+
+//file C - return and no argument 
+
+class C {
+    int show(){
+        System.out.println("We are learning aggregation");
+        return 0;
+    }
+}
+
+//file D - return and  argument 
+
+class D {
+    int rating(int rate){
+        System.out.print("Rating for Java: ");
+        return rate;
+    }
+}
+
+//file E - covariant return type 
+
+class E {
+    E message(){
+        System.out.println("Great work!");
+        return this;
+    }
+}
+
+//file Main :access 
+
+public class Main{
+    public static void main(String[] args){
+        A a= new A();
+        a.display();
+        B b= new B();
+        b.greet("Komal");
+        C c= new C();
+        c.show();
+        D d= new D();
+        System.out.println(d.rating(10));
+        E e= new E();
+        e.message();
+    }
+}
+---------------------------------------------------------
+
+//file A: default constructor
+
+class A {
+    A(){
+        System.out.println("A class constructor");
+    }
+}
+
+//file B: parameterised constructor 
+
+class B {
+    B(int n){
+        System.out.println("B class constructor " + n);
+    }
+}
+
+file Main :access
+
+public class Main{
+    public static void main(String[] args){
+        new A();
+        new B(2);
+    }
+}
+ 
+---------------------------------------------------------
+
+encapsulation : 
+file A 
+instance variable constant values 
+
+class A {
+    int n= 10;
+    void showA(){
+        System.out.println(n);
+    }
+}
+
+file B
+instance variable same variable values 
+
+class B {
+    int n;
+    void showB(int n){
+        this.n= n;
+        System.out.println(n);
+    }
+}
+
+file C
+instance variable same different  values 
+
+class C {
+    int n;
+    void showC(int c){
+        n=c;
+        System.out.println(n);
+    }
+}
+
+file D
+instance variable constructor  
+
+class D {
+    int n;
+    D(int n){
+        this.n= n;
+        System.out.println(n);
+    }
+}
+
+
+file Main :access 
+
+public class Main{
+    public static void main(String[] args){
+        A a= new A();
+        a.showA();
+        B b= new B();
+        b.showB(20);
+        C c= new C();
+        c.showC(30);
+        new D(40);
+    }
+}
+
+------------------------------------------------------------------------
+
+file A 
+getter and setter
+
+class A {
+    int n;
+    void setNum(int n){
+        this.n= n;
+    }
+    int getNum(){
+        return n;
+    }
+}
+
+file Main :access 
+
+public class Main{
+    public static void main(String[] args){
+        A a= new A();
+        a.setNum(25);
+        System.out.println("Getting the number: " + a.getNum());
+    }
+}
+
+------------------------------------------------------------------------
+
+inheritance : 
+file A 
+single level inheritance 
+
+class ParentA{
+    void display(){
+        System.out.println("ParentA class");
+    }
+}
+class A extends ParentA{
+    void displayA(){
+        System.out.println("A class");
+    }
+}
+
+
+file B
+multilevel inheritance 
+
+class GrandFatherB{
+    void show(){
+        System.out.println("GrandFatherB class");
+    }
+}
+class FatherB extends GrandFatherB{
+    void show2(){
+        System.out.println("FatherB class");
+    }
+}
+class B extends FatherB{
+    void show3(){
+        System.out.println("B class");
+    }
+}
+
+file C 
+heirarichal inheritance 
+
+class Root{
+    void message(){
+        System.out.println("Root class");
+    }
+}
+class X extends Root{
+    void message2(){
+        System.out.println("Child class X");
+    }
+}
+class C extends Root{
+    void message3(){
+        System.out.println("Child class Root");
+    }
+}
+
+file Main 
+access A , B , C
+
+public class Main{
+    public static void main(String[] args){
+        A a= new A();
+        a.display();
+        a.displayA();
+        B b= new B();
+        b.show();
+        b.show2();
+        b.show3();
+        C c= new C();
+        c.message();
+        c.message3();
+    }
+} 
+---------------------------------------------------------
+polymorphism : 
+file A 
+method overloading
+
+class A{
+    void display(){
+        System.out.println("A class");
+    }
+    void display(int n){
+        System.out.println("A class " + n);
+    }
+}
+
+file B
+constructor overloading 
+
+class B{
+    B(){
+        System.out.println("B Constructor");
+    }
+    B(int n){
+        System.out.println("B Constructor " + n);
+    }
+}
+
+file C
+constructor chaining 
+
+class C{
+    C(){
+        System.out.println("C Constructor");
+    }
+    C(int n){
+        this(12,4);
+        System.out.println("C Constructor " + n);
+    }
+    C(int x, int y){
+        this();
+        System.out.println("C Constructor " + (x+y));
+    }
+}
+
+file D
+overriding
+
+class Demo{
+    void show(){
+        System.out.println("Method of demo class");
+    }
+}
+class D extends Demo{
+    void show(){
+        super.show();
+        System.out.println("Method of D class");
+    }
+}
+
+file E 
+overhiding
+
+class Trial{
+    static void present(){
+        System.out.println("Trial class");
+    }
+}
+class E extends Trial{
+    static void present(){
+        System.out.println("E class");
+    }
+}
+
+file Main :access 
+
+public class Main{
+    public static void main(String[] args){
+        A a= new A();
+        a.display();
+        a.display(10);
+        B b= new B();
+        new B(2);
+        C c= new C(20);
+        D d= new D();
+        d.show();
+        E.present();
+    }
+}
+
+
+Output:
+A class
+A class 10
+B Constructor
+B Constructor 2
+C Constructor
+C Constructor 16
+C Constructor 20
+Method of demo class
+Method of D class
+E class
+---------------------------------------------------------
