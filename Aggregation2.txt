@@ -1,0 +1,170 @@
+aggregation in abstraction :
+file A
+class College :abstract 
+	abstract methods : 
+	course()
+	department()
+	details()
+
+class People ex College 
+
+
+//People.java
+abstract class College{
+    abstract void course(String course);
+    abstract void department(String dept);
+    abstract void details(String name, int age);
+}
+class People extends College{
+    void course(String course){
+        System.out.println("Course: " + course);
+    }
+    void department(String dept){
+        System.out.println("Department: " + dept);
+    }
+    void details(String name, int age){
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
+}
+
+
+file B
+class Main access
+
+public class Main{
+    public static void main(String[] args){
+        People p1= new People();
+        p1.details("Yash", 22);
+        p1.course("BCA");
+        p1.department("Technical");
+    }
+}
+
+
+Output:
+Name: Yash, Age: 22
+Course: BCA
+Department: Technical
+------------------------------------------------------------------------
+
+file A
+class Mahindra :abstract method 
+	tyre 
+	break1
+	mirror
+	horn 
+class SUV ex Mahindra 
+
+
+
+//SUV.java
+abstract class Mahindra{
+    abstract void tyre();
+    abstract void break1();
+    abstract void mirror();
+    abstract void horn();
+}
+class SUV extends Mahindra{
+    void tyre(){
+        System.out.println("JK-Tyre");
+    }
+    void break1(){
+        System.out.println("Bosch");
+    }
+    void mirror(){
+        System.out.println("Mahindra Maximo");
+    }
+    void horn(){
+        System.out.println("Oshotto");
+    }
+}
+
+
+file B
+class Main :access 
+
+public class Main{
+    public static void main(String[] args){
+        SUV car = new SUV();
+        car.tyre();
+        car.break1();
+        car.mirror();
+        car.horn();
+    }
+}
+
+
+Output:
+JK-Tyre
+Bosch
+Mahindra Maximo
+Oshotto
+------------------------------------------------------------------------
+
+file A
+class Mall 
+	shop
+	bar
+	cafe
+	restaurant
+	games 
+
+class Person ex Mall
+
+class Child ex Person
+
+class SeniorCitizen ex Child 
+
+
+
+//SeniorCitizen.java
+class Mall{
+    void shop(){
+        System.out.println("Visit Shop");
+    }
+    void bar(){
+        System.out.println("Visit Bar");
+    }
+    void cafe(){
+        System.out.println("Visit Cafe");
+    }
+    void restaurant(){
+        System.out.println("Visit Restaurant");
+    }
+    void games(){
+        System.out.println("Visit Games");
+    }
+}
+class Person extends Mall{
+
+}
+class Child extends Person{
+
+}
+class SeniorCitizen extends Child{
+}
+
+
+file B
+class Main :main method access	
+
+public class Main{
+    public static void main(String[] args){
+        SeniorCitizen s= new SeniorCitizen();
+        s.shop();
+        s.bar();
+        s.cafe();
+        s.restaurant();
+        s.games();
+    }
+}
+
+
+Output:
+Visit Shop
+Visit Bar
+Visit Cafe
+Visit Restaurant
+Visit Games
+
+------------------------------------------------------------------------
